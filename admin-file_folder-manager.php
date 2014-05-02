@@ -18,4 +18,6 @@ $form->addFile("file", "Scegli il file");
 
 $main->setContent("body", $form->requestAction());
 
-$main->close();
+$main->close();  
+
+?>

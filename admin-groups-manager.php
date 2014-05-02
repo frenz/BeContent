@@ -30,6 +30,6 @@ $form->triggers($form_users);
 
 $main->setContent("body", $form->requestAction());
 
-$main->close();
+$main->close();  
 
 ?>

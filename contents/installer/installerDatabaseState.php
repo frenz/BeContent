@@ -89,7 +89,7 @@ class InstallerDatabaseState extends InstallerState {
 
 				if( DB::testConnection($this->host, $this->database, $this->username, $this->password) )
 				{
-					echo 'pippo';
+					//echo 'pippo';
 					$this->validData = true;
 					$this->database_config = array (
 							'username'=>$this->username,
