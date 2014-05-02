@@ -20,5 +20,6 @@ $news = new Content($newsEntity, $usersEntity);
 $news->setOrderFields("date DESC");
 
 $main->setContent("body", $news->get());
-$main->close();
+$main->close();  
+
 ?>

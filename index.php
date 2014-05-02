@@ -11,4 +11,6 @@ $home = new Skinlet("home");
 
 $main->setContent('body', $home->get());
 
-$main->close();
+$main->close();  
+
+?>

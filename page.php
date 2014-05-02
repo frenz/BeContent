@@ -15,4 +15,6 @@ InitGraphic::getInstance()->createGraphic($main);
 
 $content = new Content($pageEntity);
 $main->setContent("body", $content->get());
-$main->close();
+$main->close();  
+
+?>

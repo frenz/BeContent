@@ -48,6 +48,6 @@ switch ($_REQUEST['id']) {
 
 session_destroy();
 $main->setContent("body",$body->get());
-$main->close();
+$main->close();  
 
 ?>

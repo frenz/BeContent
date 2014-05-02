@@ -32,6 +32,6 @@ if (!isset($_REQUEST['action'])) {
 $main->setContent("body",$form->requestAction());
 
 
-$main->close();
+$main->close();  
 
-?> 
+?>

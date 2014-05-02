@@ -71,6 +71,6 @@ if (!isset($_REQUEST['page'])) {
 
 $main->setContent("body",$form->editItem(NO_DELETE));
 	
-$main->close();
+$main->close();  
 
-?> 
+?>

@@ -82,4 +82,6 @@ $body = new Skinlet("admin");
 //$body->setContent("installation_report", _format_json(json_encode($installation_info), true));
 $main->setContent("body", $body->get());
 
-$main->close();
+$main->close();  
+
+?>

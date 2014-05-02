@@ -35,5 +35,6 @@ $homeTemplate->setContent("search_keywords", $_POST["search"]);
 $homeTemplate->setContent("results_number", $engine->resultsNumber);
 
 $main->setContent("body", $homeTemplate->get());
-$main->close();
+$main->close();  
+
 ?>

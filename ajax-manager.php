@@ -56,3 +56,6 @@ if(isset($_REQUEST["mode"]))
 }
 else
 	echo json_encode($entity->instances);
+
+
+?>

@@ -101,6 +101,6 @@ switch($_REQUEST['action']) {
 		break;
 }
 
-$main->close();
+$main->close();  
 
-?> 
+?>
