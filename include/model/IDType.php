@@ -1,5 +1,5 @@
 <?php
-require_once(realpath(dirname(__FILE__)) . '/../../include/model/baseType.php');
+require_once "baseType.php";
 
 /**
  * @access public

@@ -1,6 +1,6 @@
 <?php
 
-require "include/beContent.inc.php";
+require_once "include/beContent.inc.php";
 
 function getExtension($name) {
 	

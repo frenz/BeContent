@@ -1,8 +1,8 @@
 <?php
-require_once(realpath(dirname(__FILE__)) . '/../../include/model/baseType.php');
-require_once(realpath(dirname(__FILE__)) . '/../../include/model/Instance.php');
-require_once(realpath(dirname(__FILE__)) . '/../../include/settings.inc.php');
-require_once(realpath(dirname(__FILE__)) . '/../../include/view/template/createTemplate.php');
+require_once "baseType.php";
+require_once "Instance.php";
+require_once(realpath(dirname(__FILE__)) . '/../settings.inc.php');
+require_once(realpath(dirname(__FILE__)) . '/../view/template/createTemplate.php');
 
 /**
  * @access public

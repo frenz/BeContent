@@ -2,7 +2,7 @@
 require_once "include/settings.inc.php";
 Settings::setModMode(true);
 require_once "include/beContent.inc.php";
-require_once(realpath(dirname(__FILE__)) . '/include/view/template/InitGraphic.php');
+require_once "include/view/template/InitGraphic.php";
 
 
 /**

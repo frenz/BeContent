@@ -1,5 +1,5 @@
 <?php
-require_once(realpath(dirname(__FILE__)) . '/../../include/model/Entity.php');
+require_once "Entity.php";
 
 /**
  * @access public

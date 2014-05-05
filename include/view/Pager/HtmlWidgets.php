@@ -4,7 +4,7 @@
 /**
  * Contains the Pager_HtmlWidgets class
  *
- * PHP versions 4 and 5
+ * PHP version 5
  *
  * LICENSE: Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -32,7 +32,7 @@
  * @author    Lorenzo Alberton <l.alberton@quipo.it>
  * @copyright 2003-2007 Lorenzo Alberton
  * @license   http://www.debian.org/misc/bsd.license  BSD License (3 Clause)
- * @version   CVS: $Id: HtmlWidgets.php,v 1.6 2008/03/26 21:36:28 quipo Exp $
+ * @version   CVS: $Id$
  * @link      http://pear.php.net/package/Pager
  */
 
@@ -48,20 +48,20 @@
  */
 class Pager_HtmlWidgets
 {
-    var $pager = null;
-    
+    public $pager;
+
     // {{{ constructor
-    
+
     /**
      * Constructor
      *
-     * @param object &$pager Pager instance
+     * @param Pager_Common $pager Pager instance
      */
-    function Pager_HtmlWidgets(&$pager)
+    public function __construct(Pager_Common $pager)
     {
-        $this->pager =& $pager;
+        $this->pager = $pager;
     }
-    
+
     // }}}
     // {{{ getPerPageSelectBox()
 
@@ -84,11 +84,13 @@ class Pager_HtmlWidgets
      *                  <select> tag
      *                - 'checkMaxLimit': if true, Pager checks if $end is bigger
      *                  than $totalItems, and doesn't show the extra select options
+     *                - 'autoSubmit': if TRUE, add some js code
+     *                  to submit the form on the onChange event
      *
      * @return string xhtml select box
      * @access public
      */
-    function getPerPageSelectBox($start=5, $end=30, $step=5, $showAllData=false, $extraParams=array())
+    public function getPerPageSelectBox($start = 5, $end = 30, $step = 5, $showAllData = false, $extraParams = array())
     {
         // FIXME: needs POST support
         $optionText = '%d';
@@ -132,9 +134,43 @@ class Pager_HtmlWidgets
         if (!empty($attributes)) {
             $tmp .= ' '.$attributes;
         }
+        if (!empty($extraParams['autoSubmit'])) {
+            if ('GET' == $this->pager->_httpMethod) {
+                $selector = '\' + '.'this.options[this.selectedIndex].value + \'';
+                if ($this->pager->_append) {
+                    $tmpLinkData = $this->pager->_linkData;
+                    if (isset($tmpLinkData[$this->pager->_urlVar])) {
+                        $tmpLinkData[$this->pager->_urlVar] = $this->pager->getCurrentPageID();
+                    }
+                    $tmpLinkData[$this->pager->_sessionVar] = '1';
+                    $href = '?' . $this->pager->_http_build_query_wrapper($tmpLinkData);
+                    $href = htmlentities($this->pager->_url, ENT_COMPAT, 'UTF-8'). preg_replace(
+                        '/(&|&amp;|\?)('.$this->pager->_sessionVar.'=)(\d+)/',
+                        '\\1\\2'.$selector,
+                        htmlentities($href, ENT_COMPAT, 'UTF-8')
+                    );
+                } else {
+                    $href = htmlentities($this->pager->_url . str_replace('%d', $selector, $this->pager->_fileName), ENT_COMPAT, 'UTF-8');
+                }
+                $tmp .= ' onchange="document.location.href=\''
+                     . $href .'\''
+                     . '"';
+            } elseif ($this->pager->_httpMethod == 'POST') {
+                $tmp .= " onchange='"
+                     . $this->pager->_generateFormOnClick($this->pager->_url, $this->pager->_linkData)
+                     . "'";
+                $tmp = preg_replace(
+                    '/(input\.name = \"'.$this->pager->_sessionVar.'\"; input\.value =) \"(\d+)\";/',
+                    '\\1 this.options[this.selectedIndex].value;',
+                    $tmp
+                );
+            }
+        }
+
+
         $tmp .= '>';
         $last = $start;
-        for ($i=$start; $i<=$end; $i+=$step) {
+        for ($i = $start; $i <= $end; $i += $step) {
             $last = $i;
             $tmp .= '<option value="'.$i.'"';
             if ($i == $selected) {
@@ -182,7 +218,7 @@ class Pager_HtmlWidgets
      * @return string xhtml select box
      * @access public
      */
-    function getPageSelectBox($params = array(), $extraAttributes = '')
+    public function getPageSelectBox($params = array(), $extraAttributes = '')
     {
         $optionText = '%d';
         if (array_key_exists('optionText', $params)) {
@@ -195,7 +231,7 @@ class Pager_HtmlWidgets
                 ERROR_PAGER_INVALID_PLACEHOLDER
             );
         }
-        
+
         $tmp = '<select name="'.$this->pager->_urlVar.'"';
         if (!empty($extraAttributes)) {
             $tmp .= ' '.$extraAttributes;
@@ -205,13 +241,13 @@ class Pager_HtmlWidgets
                 $selector = '\' + '.'this.options[this.selectedIndex].value + \'';
                 if ($this->pager->_append) {
                     $href = '?' . $this->pager->_http_build_query_wrapper($this->pager->_linkData);
-                    $href = htmlentities($this->pager->_url). preg_replace(
+                    $href = htmlentities($this->pager->_url, ENT_COMPAT, 'UTF-8'). preg_replace(
                         '/(&|&amp;|\?)('.$this->pager->_urlVar.'=)(\d+)/',
                         '\\1\\2'.$selector,
-                        htmlentities($href)
+                        htmlentities($href, ENT_COMPAT, 'UTF-8')
                     );
                 } else {
-                    $href = htmlentities($this->pager->_url . str_replace('%d', $selector, $this->pager->_fileName));
+                    $href = htmlentities($this->pager->_url . str_replace('%d', $selector, $this->pager->_fileName), ENT_COMPAT, 'UTF-8');
                 }
                 $tmp .= ' onchange="document.location.href=\''
                      . $href .'\''
@@ -231,7 +267,7 @@ class Pager_HtmlWidgets
         $start = 1;
         $end   = $this->pager->numPages();
         $selected = $this->pager->getCurrentPageID();
-        for ($i=$start; $i<=$end; $i++) {
+        for ($i = $start; $i <= $end; $i++) {
             $tmp .= '<option value="'.$i.'"';
             if ($i == $selected) {
                 $tmp .= ' selected="selected"';
@@ -241,7 +277,6 @@ class Pager_HtmlWidgets
         $tmp .= '</select>';
         return $tmp;
     }
-    
+
     // }}}
 }
-?>
