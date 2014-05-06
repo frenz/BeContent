@@ -8,39 +8,49 @@
 
 class InitGraphic{
 
-	private static $instance;
-	
-	private function __construct(){}
+    private static $instance;
+    
+    private function __construct(){}
 
     /**
      * @return InitGraphic
      */
     public static function getInstance()
-	{
-		if(! isset($instance) )
-			self::$instance = new InitGraphic();
-		return self::$instance;
-	}
-	
-	/**
-	 * 
-	 * @param Skin $skin
-	 * @param boolean $hasNews
-	 * Costruisce la struttura del front-end.
-	 * Utilizza:
-	 * frame-public-head: tag html <head>
-	 * header e footer: header e footer del tema
-	 *
-	 */
-	public function createGraphic($skin)
-	{
+    {
+        if(! isset($instance) )
+            self::$instance = new InitGraphic();
+        return self::$instance;
+    }
+    
+    /**
+     * 
+     * @param Skin $skin
+     * @param boolean $hasNews
+     * Costruisce la struttura del front-end.
+     * Utilizza:
+     * frame-public-head: tag html <head>
+     * header e footer: header e footer del tema
+     *
+     */
+    public function createGraphic($skin, $hasNews = false)
+    {
+        $menuEntity = $GLOBALS['sys_menu'];
+        $menuTemplate = new Skinlet('menu');
+        $menu = new Content($menuEntity,$menuEntity);
+        $menu->setFilter("parent_id", 0);
+        $menu->setOrderFields("sys_menu_position",'sys_menu_parent',"sys_menu0_position");
+        $menu->apply($menuTemplate);
+
         /*skinlet frame-public-head: skins/theme/header.html*/
         $head = new Skinlet("frame-public-head");
 
         /*skinlet header: skins/theme/header.html*/
-	$header = new Skinlet("header");
+        $header = new Skinlet("header");
+
+
         /*skinlet footer: skins/theme/footer.html*/
         $footer = new Skinlet("footer");
+
 
         /*funzionalità breadcrump
 
@@ -55,15 +65,15 @@ class InitGraphic{
                 $breadcrump->setContent('actual_script', $actual_script);
             else
                 $breadcrump->setContent('actual_script',str_replace("/", "", $_SERVER['REQUEST_URI']) );
-
             $skin->setContent("sitemap", $breadcrump->get());  */
-
 
         /*creazione della struttura*/
         $skin->setContent("head", $head->get());
+        $skin->setContent("menu", $menuTemplate->get());
         $skin->setContent("header", $header->get());
+
         $skin->setContent("footer", $footer->get());
-	}
+    }
 
     /**
      *
@@ -106,6 +116,7 @@ class InitGraphic{
 
         $config =  Config::getInstance()->getConfigurations();
         $header->setContent('webApp',$config["defaultuser"]["webApp"]);
+
 
         /*
          * skinlet menu_admin: skins/system/menu_admin.html
