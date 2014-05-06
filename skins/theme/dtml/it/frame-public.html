@@ -11,9 +11,35 @@
 
 <!-- BEGIN body -->
 <body>
-{$header}
+<!--start: Header -->
+	<header>
+		
+		<!--start: Container -->
+		<div class="container">
+						
+			<!--start: Row -->
+			<div class="row-fluid">
+					
+				<!--start: Navigation -->
+				<div class="navigation"> 
+				
+					<div class="navbar navbar-fixed-top">
+			    		{$menu}
+			      	</div>
+				</div>	
+				<!--end: Navigation -->	
+					
+			</div>
+			<!--end: Row -->
+			
+		</div>
+		<!--end: Container-->			
+			
+	</header>
+
+	<!--end: Header-->
+	<!-- start: 1st Page - Home -->
 {$body}
-{$menu}
 {$footer}
 </body>
 </html>
