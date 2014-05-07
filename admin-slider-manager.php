@@ -22,6 +22,7 @@ $form->addText("height", "Altezza",40);
 
 $relationForm = new RelationForm("dataEntry3", $imageSliderRelation);
 $relationForm->addSection('Immagini da legare');
+$relationForm->addImage('foto','Foto');
 $relationForm->addRelationManager("id_sys_image", "Immagine", LEFT);
 $form->triggers($relationForm);
 
@@ -33,3 +34,5 @@ $form->triggers($relationPageForm);
 $main->setContent("body", $form->requestAction());
 
 $main->close();
+
+?>
