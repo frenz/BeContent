@@ -2,3 +2,11 @@
 .placeholder
 desktop.ini
 *.cfg
+multiple/*
+single/*
+widget/*
+report/*
+search/*
+templates_c/*
+cache/*
+configs/*
