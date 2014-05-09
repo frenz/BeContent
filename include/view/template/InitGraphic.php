@@ -34,44 +34,68 @@ class InitGraphic{
      */
     public function createGraphic($skin, $hasNews = false)
     {
+        $pageEntity = $GLOBALS['sys_page'];
         $menuEntity = $GLOBALS['sys_menu'];
+
+
+        
         $menuTemplate = new Skinlet('menu');
+        
         $menu = new Content($menuEntity,$menuEntity);
         $menu->setFilter("parent_id", 0);
         $menu->setOrderFields("sys_menu_position",'sys_menu_parent',"sys_menu0_position");
         $menu->apply($menuTemplate);
 
+        if($hasNews){
+            $newsEntity = $GLOBALS['sys_news'];
+            $newsContent = new Content($newsEntity);
+            $newsContent->setLimit(1);
+            $newsContent->setOrderFields("id DESC");
+            $newsContent->forceSingle();
+        }
+
+
+
+
+
+
+
+
         /*skinlet frame-public-head: skins/theme/header.html*/
         $head = new Skinlet("frame-public-head");
 
+
+
         /*skinlet header: skins/theme/header.html*/
         $header = new Skinlet("header");
+        
 
 
         /*skinlet footer: skins/theme/footer.html*/
         $footer = new Skinlet("footer");
 
 
+
         /*funzionalità breadcrump
 
-            $breadcrump = new Skinlet("sitemap");
-            $breadcrumpContent = new Content($pageEntity, $pageEntity, $pageEntity);
-            $breadcrumpContent->forceMultiple();
-            $breadcrumpContent->apply($breadcrump);
+        $breadcrump = new Skinlet("sitemap");
+        $breadcrumpContent = new Content($pageEntity, $pageEntity, $pageEntity);
+        $breadcrumpContent->forceMultiple();
+        $breadcrumpContent->apply($breadcrump);
 
-            $actual_script=str_replace("/", "", $_SERVER['SCRIPT_NAME']);
+        $actual_script=str_replace("/", "", $_SERVER['SCRIPT_NAME']);
 
-            if($actual_script!="page.php")
-                $breadcrump->setContent('actual_script', $actual_script);
-            else
-                $breadcrump->setContent('actual_script',str_replace("/", "", $_SERVER['REQUEST_URI']) );
-            $skin->setContent("sitemap", $breadcrump->get());  */
+        if($actual_script!="page.php")
+            $breadcrump->setContent('actual_script', $actual_script);
+        else
+            $breadcrump->setContent('actual_script',str_replace("/", "", $_SERVER['REQUEST_URI']) );
+        $skin->setContent("sitemap", $breadcrump->get());  */
 
         /*creazione della struttura*/
         $skin->setContent("head", $head->get());
         $skin->setContent("menu", $menuTemplate->get());
-        $skin->setContent("header", $header->get());
 
+        $skin->setContent("header", $header->get());
         $skin->setContent("footer", $footer->get());
     }
 
