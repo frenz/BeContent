@@ -1,6 +1,4 @@
 <?php
-require_once realpath(dirname(__FILE__)) .'/core.php'; 
-
 
 
 function init($usersEntity) {

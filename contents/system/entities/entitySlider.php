@@ -1,8 +1,5 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: daniele
- */
+
 
 class EntitySlider extends Entity
 {

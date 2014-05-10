@@ -1,7 +1,5 @@
 <?php
-require_once(realpath(dirname(__FILE__)) . '/installerState.php');
-//require_once(realpath(dirname(__FILE__)) . '/installerTemplateState.php');
-require_once(realpath(dirname(__FILE__)) . '/installerFinishState.php');
+
 
 /**
  * @access public
@@ -38,7 +36,7 @@ class InstallerAdminState extends InstallerState {
 
 
 		$file_return = file_put_contents(
-				realpath(dirname(__FILE__)).'/../../contents/config.cfg',
+				realpath(dirname(__FILE__)).'/../../../contents/config.cfg',
 				json_encode($this->request_config)
 		);
 	}
@@ -72,14 +70,14 @@ class InstallerAdminState extends InstallerState {
 
 	public function setInput($arrayInput){
 		$this->validData = false;
-		if( file_exists(realpath(dirname(__FILE__)).'/../../contents/config.cfg')){
+		if( file_exists(realpath(dirname(__FILE__)).'/../../../contents/config.cfg')){
 
 			/*
 			 * retrieve a data from file config.cfg
 			*/
 			$this->request_config = json_decode(
 					file_get_contents(
-							realpath(dirname(__FILE__)).'/../../contents/config.cfg'), true);
+							realpath(dirname(__FILE__)).'/../../../contents/config.cfg'), true);
 
 			if( isset($arrayInput["usernameAdmin"])
 				&& isset($arrayInput["passwordAdmin"])
@@ -115,3 +113,4 @@ class InstallerAdminState extends InstallerState {
 		}
 	}
 }
+?>

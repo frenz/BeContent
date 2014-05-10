@@ -1,5 +1,5 @@
 <?php
-require_once realpath(dirname(__FILE__)) .'/core.php';
+
 
 class EntityPage extends Entity
 {

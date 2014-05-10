@@ -1,5 +1,5 @@
 <?php
-require_once realpath(dirname(__FILE__)) .'/core.php';
+
 class EntitySection extends Entity
 {
 	public function __construct($database,$name)

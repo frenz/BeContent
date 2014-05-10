@@ -1,9 +1,5 @@
 <?php
-/**
- * @author dipompeodaniele@gmail.com, n.sacco.dev@gmail.com
- *
- */
-require_once realpath(dirname(__FILE__)) .'/core.php';
+
 class EntityService extends Entity
 {
 	public function __construct($database, $name)

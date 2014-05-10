@@ -1,5 +1,5 @@
 <?php
-require_once(realpath(dirname(__FILE__)) . '/installerState.php');
+
 
 /**
  * @access public
@@ -29,7 +29,7 @@ class InstallerTemplateState extends InstallerState {
 		$this->request_config['install_config'] = $this->install_config;
 
 		$file_return = file_put_contents(
-				realpath(dirname(__FILE__)).'/../../contents/config.cfg',
+				realpath(dirname(__FILE__)).'/../../../contents/config.cfg',
 				json_encode($this->request_config,JSON_PRETTY_PRINT)
 		);
 	}
@@ -64,14 +64,14 @@ class InstallerTemplateState extends InstallerState {
 
 	public function setInput($arrayInput){
 		$this->validData = false;
-		if( file_exists(realpath(dirname(__FILE__)).'/../../contents/config.cfg')){
+		if( file_exists(realpath(dirname(__FILE__)).'/../../../contents/config.cfg')){
 
 			/*
 			 * retrieve a data from file config.cfg
 			*/
 			$this->request_config = json_decode(
 					file_get_contents(
-							realpath(dirname(__FILE__)).'/../../contents/config.cfg'), true);
+							realpath(dirname(__FILE__)).'/../../../contents/config.cfg'), true);
 
 			$this->template_config = '';
 			$this->install_config = '';

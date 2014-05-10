@@ -1,7 +1,6 @@
 <?php
 
-require_once(realpath(dirname(__FILE__)) . '/installerState.php');
-require_once(realpath(dirname(__FILE__)) . '/installerAdminState.php');
+
 
 /**
  * @access public
@@ -30,7 +29,7 @@ class InstallerDatabaseState extends InstallerState {
 
 		$this->request_config['database_config'] = $this->database_config;
 		
-		$file_return = file_put_contents(realpath(dirname(__FILE__)).'/../../contents/config.cfg',
+		$file_return = file_put_contents(realpath(dirname(__FILE__)).'/../../../contents/config.cfg',
 				json_encode($this->request_config)
 		);
 
@@ -73,9 +72,9 @@ class InstallerDatabaseState extends InstallerState {
 	public function setInput($arrayInput){
 		var_dump($arrayInput);
 		$this->validData = false;
-		if( file_exists(realpath(dirname(__FILE__)).'/../../contents/config.cfg')){
+		if( file_exists(realpath(dirname(__FILE__)).'/../../../contents/config.cfg')){
 			$this->request_config = json_decode(
-					file_get_contents(realpath(dirname(__FILE__)).'/../../contents/config.cfg'), true);
+					file_get_contents(realpath(dirname(__FILE__)).'/../../../contents/config.cfg'), true);
 			
 			if( ( isset($arrayInput["usernameMysql"]) && $arrayInput["usernameMysql"] != '')
 				&& isset($arrayInput["host"]) 
@@ -103,3 +102,4 @@ class InstallerDatabaseState extends InstallerState {
 		}
 	}
 }
+?>

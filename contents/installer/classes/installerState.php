@@ -1,10 +1,5 @@
 <?php
 
-require_once realpath(dirname(__FILE__))."/../../include/settings.inc.php";
-require_once realpath(dirname(__FILE__))."/../../include/skin.inc.php";
-require_once realpath(dirname(__FILE__))."/../../include/skinlet.inc.php";
-require_once realpath(dirname(__FILE__))."/../../include/beContent.inc.php";
-
 /**
  * @access public
  */
@@ -33,3 +28,4 @@ class  InstallerState {
 		return $this->stateName;
 	}
 }
+?>

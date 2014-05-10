@@ -4,8 +4,6 @@ session_start();
 
 require_once "include/beContent.inc.php";
 require_once "include/auth.inc.php";
-require_once "include/view/template/InitGraphic.php";
-
 
 /* LOCAL START */
 

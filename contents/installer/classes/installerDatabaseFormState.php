@@ -1,6 +1,5 @@
 <?php
-require_once(realpath(dirname(__FILE__)) . '/installerState.php');
-require_once(realpath(dirname(__FILE__)) . '/installerDatabaseState.php');
+
 
 /**
  * @access public
@@ -21,7 +20,7 @@ class InstallerDatabaseFormState extends InstallerState {
 		
 		$request_config = json_decode(
 				file_get_contents(
-						realpath(dirname(__FILE__)).'/../../contents/config.cfg'), true);
+						realpath(dirname(__FILE__)).'/../../../contents/config.cfg'), true);
 		
 		$next_state = array(
 				'nextState' => 'installerDatabaseState',
@@ -32,7 +31,7 @@ class InstallerDatabaseFormState extends InstallerState {
 		$request_config ['next_state'] = $next_state; 
 		
 		$file_return = file_put_contents(
-				realpath(dirname(__FILE__)).'/../../contents/config.cfg',
+				realpath(dirname(__FILE__)).'/../../../contents/config.cfg',
 				json_encode($request_config ,JSON_PRETTY_PRINT)
 		);
 	}

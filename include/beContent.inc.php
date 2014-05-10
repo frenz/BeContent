@@ -5,15 +5,15 @@
 /**
  * Configurations inclusion
  */
-require_once(realpath(dirname(__FILE__))."/settings.inc.php");
+require_once "settings.inc.php";
 
 if(Settings::getOperativeMode()=="release")
 	error_reporting(E_ERROR);
 
-require_once(realpath(dirname(__FILE__))."/config.inc.php");
-require_once realpath(dirname(__FILE__))."/message.inc.php";
-require_once realpath(dirname(__FILE__))."/parser.inc.php";
-require_once realpath(dirname(__FILE__))."/db.inc.php";
+require_once "config.inc.php";
+require_once "message.inc.php";
+require_once "parser.inc.php";
+require_once "db.inc.php";
 //$RESERVEDWORDS = Array('page');
 
 
@@ -72,11 +72,11 @@ $database = new DB(
 		$config['database']['password']
 );
 
-require_once realpath(dirname(__FILE__))."/entity.inc.php";
-require_once realpath(dirname(__FILE__))."/skin.inc.php";
-require_once realpath(dirname(__FILE__)).'/skinlet.inc.php';
-require_once realpath(dirname(__FILE__))."/form.inc.php";
+require_once "entity.inc.php";
+require_once "skin.inc.php";
+require_once "skinlet.inc.php";
+require_once "form.inc.php";
 
 
 if($config['installed']==true)
-	require_once(realpath(dirname(__FILE__))."/entities.inc.php");
+	require_once "entities.inc.php";

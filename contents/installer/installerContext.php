@@ -1,11 +1,6 @@
 <?php
 
-//require_once realpath(dirname(__FILE__))."/../../include/settings.inc.php";
-//require_once realpath(dirname(__FILE__))."/../../include/skin.inc.php";
-//require_once realpath(dirname(__FILE__))."/../../include/skinlet.inc.php";
-//require_once realpath(dirname(__FILE__))."/../../include/beContent.inc.php";
-
-require_once realpath(dirname(__FILE__)).'/installerInitState.php';
+require_once "classes/core.php";
 
 /**
  * @access public
@@ -50,4 +45,4 @@ class InstallerContext {
 	}
 }
 $install = new InstallerContext();
-
+?>

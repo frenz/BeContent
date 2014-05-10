@@ -1,5 +1,5 @@
 <?php
-require_once realpath(dirname(__FILE__)) .'/core.php';
+
 /**
  * this entity stores in database the schema for other entities, it's useful
  * in debug and website creation

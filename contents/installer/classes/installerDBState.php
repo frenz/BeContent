@@ -1,5 +1,5 @@
 <?php
-	class InstallDB extends InstallerState{
+	class InstallerDB extends InstallerState{
 		/**
 		 * @access public
 		 */

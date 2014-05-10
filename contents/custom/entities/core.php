@@ -2,15 +2,13 @@
 
 
 
-require_once realpath(dirname(__FILE__)) . '/entityEventi.php';
-
-
-require_once realpath(dirname(__FILE__)) . '/relationEventiFoto.php';
+//require_once "entityEventi.php";
+//require_once "relationEventiFoto.php";
 
 
 /*entities*/
 
-$tagEntity->connect();
+//$tagEntity->connect();
 /*relation*/
 
-$eventiImageRelation->connect();
+//$eventiImageRelation->connect();
