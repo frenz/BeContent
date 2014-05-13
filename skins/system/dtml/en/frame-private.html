@@ -10,14 +10,28 @@
 <body>
 	<div id="wrapper">
 		<div class="container">
+			<div class="header clearfix row" id="header_content">
 				{$header}
+			</div>
 			<!-- BAR MENU -->
-            <aside id="sidebar" class="column">
-                {$menu}
-            </aside>
-            <section id="main" class="column">
+			<div class="row no_bm absolute-position" id="bar-menu">
+				{$sitemap}
+			</div>
+			<div class="row no_bm" id="bar-menu-hidden">&nbsp;</div>
+			
+			<div class="twoPfive columns sidebar mt20">
+				{$menu}
+			</div>
+			
+			<div class="thirteen columns omega ml20 mt20 mr20" id="content">
 				{$body}
-            </section>
+			</div>
+			
+			<!-- Footer -->
+			<div class="clearfix">&nbsp;</div>
+			<div id="footer" class="clearfix row near">
+				{$footer}
+			</div>
 		</div>
 	</div>
 </body>

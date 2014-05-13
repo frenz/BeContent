@@ -1,20 +1,34 @@
-<header id="header">
-    <hgroup>
-        <h1 class="site_title">beContent Admin</h1>
-        {if $webApp != null}
-            <h2 class="section_title">{$webApp}</h2><div class="btn_view_site"><a href="index.php">View Site</a></div>
-        {else}
-            <h2 class="section_title">Dashboard</h2><div class="btn_view_site"><a href="index.php">View Site</a></div>
-        {/if}
-    </hgroup>
-</header> <!-- end of header bar -->
-<section id="secondary_bar">
-    <div class="user">
-        {if $instance->username != null}
-         <p>{$instance->username} (<a href="#"></a>)</p>
-         <a class="logout_user" href="logout.php" title="Logout">Logout</a>
-        {else}
-            <p></p>
-        {/if}
-    </div>
-</section>
+
+<div class="seven columns mt20 flt_lft" id="header_left">
+	<a href="index.php"> <img src="skins/handling/img/beContent.jpg"
+		alt="DISIM">
+	</a>
+</div>
+<div class="seven columns mt20 flt_rgh" id="header_right">
+	<div class="header_right mt20">
+		<div class="header_contacts mb20">
+			<div class="header_login ml10">
+				<a href="admin.php">Login</a>
+			</div>
+			<div class="header_language mr10">
+				<a
+					href="#">
+					<img alt="en" title="English version" src="skins/handling/css/img/flag-en.gif" > English version
+				</a>
+			</div>
+		</div>
+		<div class="header_soc_search">
+			<div class="header_search">
+				<a
+					href="#"
+					class="flt_rgh header_soc_rss" id="soc_rss">rss</a> <a
+					href="http://didattica.disim.univaq.it/content.php?fid=twitter&amp;pid=193&amp;did=1"
+					class="flt_rgh header_soc_twitter" id="soc_twitter">twitter</a>
+				<form class="flt_rgh search" action="search.php" method="post">
+					<button class="button_search" type="submit"></button>
+					<input name="search" id="s" value="Search ..." type="text">
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
