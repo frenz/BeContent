@@ -1234,7 +1234,7 @@ ul.clients li:last-child {
 
 /* Necessary Styles
 =================================================================== */
-.flexslider {margin: 0;  border: 1px solid #EDF0F1;}
+.flexslider {margin: 0; padding: 0;}
 
 /* Hide the slides before the JS is loaded. Avoids image jumping */
 .flexslider .slides > li {position: relative;  zoom: 1; display: none; -webkit-backface-visibility: hidden;}
@@ -1294,21 +1294,21 @@ html[xmlns] .slides {display: block;}
 }
 
 .flex-direction-nav .flex-next {
-	background-image: url(../img/slider-control-right.png);
+	background-image: url(skins/theme/images/slider-control-right.png);
 	background-repeat: no-repeat;
 	background-position: 52% 50%;
 }
 
 .flex-direction-nav .flex-prev {
 	margin-right: 36px;
-	background-image: url(../img/slider-control-left.png);
+	background-image: url(skins/theme/images/slider-control-left.png);
 	background-repeat: no-repeat;
 	background-position: 48% 50%;
 }
 
 .flex-direction-nav .flex-prev:hover,
 .flex-direction-nav .flex-next:hover {
-	background-color:#63B6AE;
+	background-color:#72b626;
 	opacity: 1;
 }
 
@@ -1367,7 +1367,6 @@ html[xmlns] .slides {display: block;}
 	bottom: 20px;
 	background-color: #222;
 	background: rgba(0, 0, 0, 0.7);
-	text-shadow: none;
 }
 
 .slide-caption.n {background-color: #222; background: rgba(0, 0, 0, 0.6);}
@@ -1384,6 +1383,7 @@ html[xmlns] .slides {display: block;}
 	line-height: 19px;
 	color: #bbb;
 }
+
 
 /* About
 =================================================================== */
@@ -1520,7 +1520,7 @@ input[type="button"] {
 }
 
 .testimonial-container .testimonials-bg {
-	background: url(../img/testimonials-bg.png) no-repeat;
+	background: url(skins/theme/images/testimonials-bg.png) no-repeat;
 	margin-top: -1px;
 	display: block;
 	width: 200px;
@@ -1562,25 +1562,25 @@ input[type="button"] {
 }
 
 .testimonial-container .mr-rotato-next {
-	background: url(../img/testimonials-right-01.png) no-repeat 50%;
+	background: url(skins/theme/images/testimonials-right-01.png) no-repeat 50%;
 	background-color: #fff;
 	right: 1px;
 	z-index: 6;
 }
 
 .testimonial-container .mr-rotato-prev {
-	background: url(../img/testimonials-left-01.png) no-repeat 50%;
+	background: url(skins/theme/images/testimonials-left-01.png) no-repeat 50%;
 	background-color: #fff;
 	right: 25px;
 	z-index: 5;
 }
 
 .testimonial-container .mr-rotato-next:hover {
-	background: url(../img/testimonials-right-02.png) no-repeat 50%;
+	background: url(skins/theme/images/testimonials-right-02.png) no-repeat 50%;
 }
 
 .testimonial-container .mr-rotato-prev:hover {
-	background: url(../img/testimonials-left-02.png) no-repeat 50%;
+	background: url(skins/theme/images/testimonials-left-02.png) no-repeat 50%;
 }
 
 .testimonial-container .mr-rotato-prev:hover,
@@ -1608,7 +1608,7 @@ input[type="button"] {
 }
 
 .testimonial-container-alt .testimonials-bg {
-	background: url(../img/testimonials-bg-alt.png) no-repeat;
+	background: url(skins/theme/images/testimonials-bg-alt.png) no-repeat;
 	margin-top: 0px;
 	display: block;
 	width: 200px;
@@ -1653,25 +1653,25 @@ input[type="button"] {
 }
 
 .testimonial-container-alt .mr-rotato-next {
-	background: url(../img/testimonials-right-01.png) no-repeat 50%;
+	background: url(skins/theme/images/testimonials-right-01.png) no-repeat 50%;
 	background-color: #fff;
 	right: 1px;
 	z-index: 6;
 }
 
 .testimonial-container-alt .mr-rotato-prev {
-	background: url(../img/testimonials-left-01.png) no-repeat 50%;
+	background: url(skins/theme/images/testimonials-left-01.png) no-repeat 50%;
 	background-color: #fff;
 	right: 25px;
 	z-index: 5;
 }
 
 .testimonial-container-alt .mr-rotato-next:hover {
-	background: url(../img/testimonials-right-02.png) no-repeat 50%;
+	background: url(skins/theme/images/testimonials-right-02.png) no-repeat 50%;
 }
 
 .testimonial-container-alt .mr-rotato-prev:hover {
-	background: url(../img/testimonials-left-02.png) no-repeat 50%;
+	background: url(skins/theme/images/testimonials-left-02.png) no-repeat 50%;
 }
 
 .testimonial-container-alt .mr-rotato-prev:hover,
@@ -2533,14 +2533,14 @@ span.time {
 	margin: 5px 0;
 }
 
-.check_list li {background: url(../img/icons/list/green/list_check.png) no-repeat 0% 50%; padding: 0 0 0 18px;}
-.plus_list  li {background: url(../img/icons/list/green/list_plus.png) no-repeat 0% 50%; padding: 0 0 0 18px;}
-.minus_list  li {background: url(../img/icons/list/green/list_minus.png) no-repeat 0% 50%; padding: 0 0 0 18px;}
-.star_list  li {background: url(../img/icons/list/green/list_star.png) no-repeat 0% 50%; padding: 0 0 0 16px;}
-.arrow_list  li {background: url(../img/icons/list/green/list_arrow.png) no-repeat 0% 50%; padding: 0 0 0 16px;}
-.square_list  li {background: url(../img/icons/list/green/list_square.png) no-repeat 0% 50%; padding: 0 0 0 16px;}
-.circle_list  li {background: url(../img/icons/list/green/list_circle.png) no-repeat 0% 50%; padding: 0 0 0 16px;}
-.cross_list  li {background: url(../img/icons/list/green/list_cross.png) no-repeat 0% 50%; padding: 0 0 0 16px;}
+.check_list li {background: url(skins/theme/images/icons/list/green/list_check.png) no-repeat 0% 50%; padding: 0 0 0 18px;}
+.plus_list  li {background: url(skins/theme/images/icons/list/green/list_plus.png) no-repeat 0% 50%; padding: 0 0 0 18px;}
+.minus_list  li {background: url(skins/theme/images/icons/list/green/list_minus.png) no-repeat 0% 50%; padding: 0 0 0 18px;}
+.star_list  li {background: url(skins/theme/images/icons/list/green/list_star.png) no-repeat 0% 50%; padding: 0 0 0 16px;}
+.arrow_list  li {background: url(skins/theme/images/icons/list/green/list_arrow.png) no-repeat 0% 50%; padding: 0 0 0 16px;}
+.square_list  li {background: url(skins/theme/images/icons/list/green/list_square.png) no-repeat 0% 50%; padding: 0 0 0 16px;}
+.circle_list  li {background: url(skins/theme/images/icons/list/green/list_circle.png) no-repeat 0% 50%; padding: 0 0 0 16px;}
+.cross_list  li {background: url(skins/theme/images/icons/list/green/list_cross.png) no-repeat 0% 50%; padding: 0 0 0 16px;}
 
 
 /* Footer
@@ -2624,7 +2624,7 @@ span.time {
 	display: block;
 	float: right;
 	background-color: #b0b0b0;
-	background-image: url(../img/scroll-top-top.png);
+	background-image: url(skins/theme/images/scroll-top-top.png);
 	background-repeat: no-repeat;
 	background-position: 50%;
 	-webkit-transition: all 0.1s ease-in-out;
@@ -2881,7 +2881,7 @@ span.time {
 #twitter b a, 
 #twitter b a:hover {color: #666; font-weight:bold}
 #twitter li {
-	background: url(../img/icons/twitter.png) no-repeat 0% 50%;
+	background: url(skins/theme/images/icons/twitter.png) no-repeat 0% 50%;
 	padding-left: 40px;
 	line-height: 18px; margin: 2px 0 12px 0;
 	}
@@ -3100,18 +3100,18 @@ span.time {
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
 	
 	.testimonial-container .testimonials-bg {
-		background: url(../img/testimonials-bg@2x.png) no-repeat;
+		background: url(skins/theme/images/testimonials-bg@2x.png) no-repeat;
 		background-size: 65px 22px;
 	}
 	
 	.testimonial-container-alt .testimonials-bg {
 		margin-top: 0px;
-		background: url(../img/testimonials-bg-alt@2x.png) no-repeat;
+		background: url(skins/theme/images/testimonials-bg-alt@2x.png) no-repeat;
 		background-size: 65px 22px;
 	}
 	
 	#twitter li {
-		background: url(../img/icons/twitter@2x.png) no-repeat 0% 50%;
+		background: url(skins/theme/images/icons/twitter@2x.png) no-repeat 0% 50%;
 		background-size: 32px 32px;	
 	}
 	

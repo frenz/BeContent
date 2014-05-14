@@ -62,7 +62,6 @@ class InitGraphic{
 
         $slider = new Content($sliderEntity, $imageSliderRelation, $imageEntity);
         $slider->forceSingle();
-        $slider->setFilter('id', '1');
         $slider ->apply($sliderTemplate, 'slider');
 
 

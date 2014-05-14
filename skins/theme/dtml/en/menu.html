@@ -1,0 +1,30 @@
+<div class="nav-collapse collapse">
+	{if $instances != null || $instance != null}
+	<ul class="nav">
+		{foreach from=$instances item=instance}
+			{if $instance->parent == null}
+			{if $instance->link == $smarty.server.SCRIPT_NAME|replace:'/':'' || $smarty.server.SCRIPT_NAME == ''}
+		<li ><a href="{$instance->entry}.html">{$instance->entry}</a></li>
+			{else}	
+		<li class="dropdown">
+			<a href="{$instance->entry}.html" class="dropdown-toggle" data-toggle="dropdown">{$instance->entry}<b class="caret"></b></a>
+			{/if}
+			{if $instance->sys_menu != null}
+			<ul class="dropdown-menu">
+				{foreach from=$instance->sys_menu item=child_menu}
+				{if $child_menu->linked_page == 0}
+					<li><a href="{$child_menu->link}">{$child_menu->entry}</a></li>
+				{else}
+					<li><a href="page.php?sys_page_id={$child_menu->linked_page}">{$child_menu->linked_page}</a></li>
+				{/if}
+				{/foreach}
+			</ul>
+			{/if}
+		</li>
+		{/if}
+		{/foreach}
+		<!-- END #main-menu -->
+		
+	</ul>
+	{/if}
+</div>
