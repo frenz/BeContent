@@ -42,25 +42,29 @@ class InitGraphic{
       $newsEntity = $GLOBALS['sys_news'];
 
 
-       
+      //Creazione oggetto di tipo menu
       $menuTemplate = new Skinlet('menu');
-       
       $menu = new Content($menuEntity,$menuEntity);
       $menu->setFilter("parent_id", 0);
       $menu->setOrderFields("sys_menu_position",'sys_menu_parent',"sys_menu0_position");
-      $menu->apply($menuTemplate);
-
+      $menu->apply($menuTemplate);//apply(,'nome prefisso istanza')
+	  
+	  //Creazione oggetto di tipo news
       $newsTemplate = new Skinlet('news');
       $news = new Content($newsEntity);
       $news->setOrderFields("id DESC");
       $news->apply($newsTemplate);
 
-
+      //Creazione oggetto di tipo slider
       $sliderTemplate = new Skinlet('slider');
-
       $slider = new Content($sliderEntity, $imageSliderRelation, $imageEntity);
-      $slider->forceSingle();
-      $slider ->apply($sliderTemplate, 'slider');
+      $slider->apply($sliderTemplate);
+      
+      //Creazione oggetto di tipo page
+      $pageTemplate = new Skinlet('page');
+      $page = new Content($pageEntity);
+      $page->apply($pageTemplate);
+      
 
 
       /*skinlet frame-public-head: skins/theme/header.html*/
@@ -98,6 +102,7 @@ class InitGraphic{
        $skin->setContent("menu", $menuTemplate->get());
        $skin->setContent("news", $newsTemplate->get());
        $skin->setContent("slider", $sliderTemplate->get());
+       $skin->setContent("page", $pageTemplate->get());
        $skin->setContent("header", $header->get());
        $skin->setContent("footer", $footer->get());
    }

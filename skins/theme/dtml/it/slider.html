@@ -1,27 +1,26 @@
-{if $slider_instance != null }
+
+{if $instances != null || $instance != null}
 <!-- start: Flexslider -->
 <div class="slider">
 
     <div class="flexslider">
         <ul class="slides">
-        {foreach from=$slider_instance->sys_image_sys_slider item=image}
-            <li>
-                <img src="data:image/jpg;base64,{$image->id_sys_image->data}" alt="{$image->id_sys_image->alt}" />
-                <div class="slide-caption n hidden-phone">
-                    <h3>{$image->id_sys_image->caption}</h3>
-                    <p>
-                        {$image->id_sys_image->id}
-                    </p>
-                </div>
-            </li>
+        {foreach from=$instances item=instance}
+			{foreach from=$instance->sys_image_sys_slider item=image}
+	            <li>
+	                <img src="data:image/jpg;base64,{$image->id_sys_image->data}" alt="{$image->id_sys_image->alt}" />
+	                <div class="slide-caption n hidden-phone">
+	                    <h3>{$image->id_sys_image->caption}</h3>
+	                    <p>
+	                        {$image->id_sys_image->id}
+	                    </p>
+	                </div>
+	            </li>
+	        {/foreach}
         {/foreach}
         </ul>
     </div>
 
 </div>
 <!-- end: Flexslider -->
-
-
-    
-
 {/if}
