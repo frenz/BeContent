@@ -10,3 +10,7 @@ search/*
 templates_c/*
 cache/*
 configs/*
+skins/theme/dtml/it/search/*
+skins/theme/dtml/it/single/*
+skins/theme/dtml/it/multiple/*
+skins/system/dtml/it/report/*

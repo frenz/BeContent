@@ -34,70 +34,69 @@ class InitGraphic{
     */
    public function createGraphic($skin, $hasNews = false)
    {
-       $pageEntity = $GLOBALS['sys_page'];
-       $menuEntity = $GLOBALS['sys_menu'];
-       $sliderEntity = $GLOBALS['sys_slider'];
-       $imageEntity =$GLOBALS['sys_image'];
-       $imageSliderRelation = $GLOBALS['sys_image_sys_slider'];
+      $pageEntity = $GLOBALS['sys_page'];
+      $menuEntity = $GLOBALS['sys_menu'];
+      $sliderEntity = $GLOBALS['sys_slider'];
+      $imageEntity =$GLOBALS['sys_image'];
+      $imageSliderRelation = $GLOBALS['sys_image_sys_slider'];
+      $newsEntity = $GLOBALS['sys_news'];
 
 
        
-       $menuTemplate = new Skinlet('menu');
+      $menuTemplate = new Skinlet('menu');
        
-       $menu = new Content($menuEntity,$menuEntity);
-       $menu->setFilter("parent_id", 0);
-       $menu->setOrderFields("sys_menu_position",'sys_menu_parent',"sys_menu0_position");
-       $menu->apply($menuTemplate);
+      $menu = new Content($menuEntity,$menuEntity);
+      $menu->setFilter("parent_id", 0);
+      $menu->setOrderFields("sys_menu_position",'sys_menu_parent',"sys_menu0_position");
+      $menu->apply($menuTemplate);
 
-       if($hasNews){
-           $newsEntity = $GLOBALS['sys_news'];
-           $newsContent = new Content($newsEntity);
-           $newsContent->setLimit(1);
-           $newsContent->setOrderFields("id DESC");
-           $newsContent->forceSingle();
-       }
+      $newsTemplate = new Skinlet('news');
+      $news = new Content($newsEntity);
+      $news->setOrderFields("id DESC");
+      $news->apply($newsTemplate);
 
 
-       $sliderTemplate = new Skinlet('slider');
+      $sliderTemplate = new Skinlet('slider');
 
-        $slider = new Content($sliderEntity, $imageSliderRelation, $imageEntity);
-        $slider->forceSingle();
-        $slider ->apply($sliderTemplate, 'slider');
+      $slider = new Content($sliderEntity, $imageSliderRelation, $imageEntity);
+      $slider->forceSingle();
+      $slider ->apply($sliderTemplate, 'slider');
 
 
-       /*skinlet frame-public-head: skins/theme/header.html*/
-       $head = new Skinlet("frame-public-head");
+      /*skinlet frame-public-head: skins/theme/header.html*/
+      $head = new Skinlet("frame-public-head");
 
 
 
-       /*skinlet header: skins/theme/header.html*/
-       $header = new Skinlet("header");
+      /*skinlet header: skins/theme/header.html*/
+      $header = new Skinlet("header");
        
 
 
-       /*skinlet footer: skins/theme/footer.html*/
-       $footer = new Skinlet("footer");
+      /*skinlet footer: skins/theme/footer.html*/
+      $footer = new Skinlet("footer");
 
 
 
-       /*funzionalità breadcrump
+      /*funzionalità breadcrump
 
-       $breadcrump = new Skinlet("sitemap");
-       $breadcrumpContent = new Content($pageEntity, $pageEntity, $pageEntity);
-       $breadcrumpContent->forceMultiple();
-       $breadcrumpContent->apply($breadcrump);
+      $breadcrump = new Skinlet("sitemap");
+      $breadcrumpContent = new Content($pageEntity, $pageEntity, $pageEntity);
+      $breadcrumpContent->forceMultiple();
+      $breadcrumpContent->apply($breadcrump);
 
-       $actual_script=str_replace("/", "", $_SERVER['SCRIPT_NAME']);
+      $actual_script=str_replace("/", "", $_SERVER['SCRIPT_NAME']);
 
-       if($actual_script!="page.php")
-           $breadcrump->setContent('actual_script', $actual_script);
-       else
-           $breadcrump->setContent('actual_script',str_replace("/", "", $_SERVER['REQUEST_URI']) );
+      if($actual_script!="page.php")
+          $breadcrump->setContent('actual_script', $actual_script);
+      else
+            $breadcrump->setContent('actual_script',str_replace("/", "", $_SERVER['REQUEST_URI']) );
        $skin->setContent("sitemap", $breadcrump->get());  */
 
        /*creazione della struttura*/
        $skin->setContent("head", $head->get());
        $skin->setContent("menu", $menuTemplate->get());
+       $skin->setContent("news", $newsTemplate->get());
        $skin->setContent("slider", $sliderTemplate->get());
        $skin->setContent("header", $header->get());
        $skin->setContent("footer", $footer->get());
