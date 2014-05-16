@@ -41,15 +41,14 @@ class InitGraphic{
       $imageSliderRelation = $GLOBALS['sys_image_sys_slider'];
       $newsEntity = $GLOBALS['sys_news'];
 
-
-      //Creazione oggetto di tipo menu
+      /*Creazione oggetto di tipo menu*/
       $menuTemplate = new Skinlet('menu');
       $menu = new Content($menuEntity,$menuEntity);
       $menu->setFilter("parent_id", 0);
       $menu->setOrderFields("sys_menu_position",'sys_menu_parent',"sys_menu0_position");
-      $menu->apply($menuTemplate);//apply(,'nome prefisso istanza')
+      $menu->apply($menuTemplate); /* apply(ogetto,'nome prefisso istanza') */
 	  
-	  //Creazione oggetto di tipo news
+	   /*Creazione oggetto di tipo news*/
       $newsTemplate = new Skinlet('news');
       $news = new Content($newsEntity);
       $news->setOrderFields("id DESC");
