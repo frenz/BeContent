@@ -34,12 +34,15 @@ class InitGraphic{
     */
    public function createGraphic($skin, $hasNews = false)
    {
-      $pageEntity = $GLOBALS['sys_page'];
+	  $actualUser =  $_SESSION['user']['username'];
+   	  $pageEntity = $GLOBALS['sys_page'];
       $menuEntity = $GLOBALS['sys_menu'];
       $sliderEntity = $GLOBALS['sys_slider'];
       $imageEntity =$GLOBALS['sys_image'];
       $imageSliderRelation = $GLOBALS['sys_image_sys_slider'];
       $newsEntity = $GLOBALS['sys_news'];
+      $groupsEntity = $GLOBALS['sys_group'];
+      $userEntity = $GLOBALS['sys_user'];
 
       /*Creazione oggetto di tipo menu*/
       $menuTemplate = new Skinlet('menu');
@@ -73,7 +76,11 @@ class InitGraphic{
 
       /*skinlet header: skins/theme/header.html*/
       $header = new Skinlet("header");
-       
+      $loggedUser = new Content($userEntity);
+      $loggedUser->setFilter('username', $actualUser);
+      $loggedUser->forceSingle();
+      $loggedUser->apply($header);
+      
 
 
       /*skinlet footer: skins/theme/footer.html*/

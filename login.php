@@ -9,9 +9,9 @@ require_once "include/content.inc.php";
 require_once "include/auth.inc.php";
 require_once "include/view/template/InitGraphic.php";
 
-$main = new Skin('system');
+$main = new Skin('theme');
 
-InitGraphic::getInstance()->createSystemGraphic($main);
+InitGraphic::getInstance()->createGraphic($main);
 $loginBody = new Skinlet('login');
 $main->setContent('body', $loginBody->get());
 
