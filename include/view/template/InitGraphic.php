@@ -73,7 +73,6 @@ class InitGraphic{
       $head = new Skinlet("frame-public-head");
 
 
-
       /*skinlet header: skins/theme/header.html*/
       $header = new Skinlet("header");
       $loggedUser = new Content($userEntity);
