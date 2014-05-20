@@ -1,26 +1,22 @@
-
 {if $instances != null || $instance != null}
-<!-- start: Flexslider -->
-<div class="slider">
-
-    <div class="flexslider">
-        <ul class="slides">
-        {foreach from=$instances item=instance}
+<!-- Slider
+======================================================================== -->
+<div class="slider-wrapper">
+	<div id="header_slider" class="owl-carousel owl-theme">
+		{foreach from=$instances item=instance}
 			{foreach from=$instance->sys_image_sys_slider item=image}
-	            <li>
-	                <img src="data:image/jpg;base64,{$image->id_sys_image->data}" alt="{$image->id_sys_image->alt}" />
-	                <div class="slide-caption n hidden-phone">
-	                    <h3>{$image->id_sys_image->caption}</h3>
-	                    <p>
-	                        {$image->id_sys_image->id}
-	                    </p>
-	                </div>
-	            </li>
-	        {/foreach}
-        {/foreach}
-        </ul>
-    </div>
 
+		<div class="item slider-info" style="background-color:#3498db;">
+			<div class="text-slider">
+            	<p>{$image->id_sys_slider->titolo}</p>
+				<a href="#" id="scroll_to"><span class="scroll-down"><span class="img-scroll-down"></span></span>{$image->id_sys_image->caption}</a>
+			</div>
+			<img width="{$image->id_sys_slider->width}" height="{$image->id_sys_slider->height}" src="data:image/jpg;base64,{$image->id_sys_image->data}" class="attachment-full wp-post-image" alt="{$image->id_sys_image->alt}" /> 
+		</div>
+			{/foreach}
+        {/foreach}
+    
+    </div>
 </div>
-<!-- end: Flexslider -->
+<!-- Slider / End -->
 {/if}
