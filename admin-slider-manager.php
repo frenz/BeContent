@@ -17,6 +17,7 @@ $form->addTitleForm("Slider Management");
 $form->addSection('slider details');
 $form->addText("titolo", "Titolo", 40, MANDATORY);
 $form->addText("descrizione", "Descrizione", 40);
+$form->addText("effetto", "Colore", 40);
 $form->addText("width", "Largezza", 40, MANDATORY);
 $form->addText("height", "Altezza",40);
 

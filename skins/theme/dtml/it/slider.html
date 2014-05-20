@@ -6,7 +6,7 @@
 		{foreach from=$instances item=instance}
 			{foreach from=$instance->sys_image_sys_slider item=image}
 
-		<div class="item slider-info" style="background-color:#3498db;">
+		<div class="item slider-info" style="background-color:{$image->id_sys_slider->effetto};">
 			<div class="text-slider">
             	<p>{$image->id_sys_slider->titolo}</p>
 				<a href="#" id="scroll_to"><span class="scroll-down"><span class="img-scroll-down"></span></span>{$image->id_sys_image->caption}</a>
