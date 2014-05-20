@@ -43,13 +43,17 @@
                     <li class="icn_settings">
                         <a href="{$service->script}?action=report">{$service->entry} </a>
                     </li>
-                {else if $service->name == 'Developer Manager'}
-                    <li class="icn_settings">
+                {else if $service->name == 'Video'}
+                    <li class="icn_video">
+                        <a href="{$service->script}?action=report">{$service->entry} </a>
+                    </li>
+                {else if $service->name == 'Developer'}
+                    <li class="icn_developer">
                         <a href="{$service->script}?action=report">{$service->entry} </a>
                     </li>
                 {else}
                     <li>
-                        <a href="{$service->script}?action=report">{$service->entry} </a>
+                        <a href="{$service->script}?action=report">{$service->entry} {$service->name}</a>
                     </li>
                 {/if}
             {/foreach}

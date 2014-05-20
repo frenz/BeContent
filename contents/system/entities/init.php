@@ -203,6 +203,17 @@ function init($usersEntity) {
                 "id_entities" => "",
                 "position"	=> "8")
         );
+        $GLOBALS['servicesEntity']->insertItem(array(
+                "id"		=> "15",
+                "name"		=> "Developer",
+                "script"	=> "admin-developer-manager.php",
+                "entry"		=> "Developer",
+                "servicecategory" => "2",
+                "visible"	=> "*",
+                "des"		=> "",
+                "id_entities" => "",
+                "position"	=> "9")
+        );
 
 		$GLOBALS['servicesGroupsRelation']->insertItem(null,"1","1");
 		$GLOBALS['servicesGroupsRelation']->insertItem(null,"2","1");
@@ -218,6 +229,7 @@ function init($usersEntity) {
 		$GLOBALS['servicesGroupsRelation']->insertItem(null,"12","1");
 		$GLOBALS['servicesGroupsRelation']->insertItem(null,"13","1");
 		$GLOBALS['servicesGroupsRelation']->insertItem(null,"14","1");
+		$GLOBALS['servicesGroupsRelation']->insertItem(null,"15","1");
 
 	}
 }
