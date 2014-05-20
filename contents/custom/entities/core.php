@@ -1,18 +1,20 @@
 <?php
+/**
+ * User: daniele
+ * Date: 21/09/13
+ * Time: 12.10
+ * @author dipompeodaniele@gmail.com
+ */
 
-
-//require_once "../../system/entities/entityImage.php";
 require_once "entityDeveloper.php";
-require_once "relationDeveloperImage.php";
-$developerEntity->connect();
-$developerImageRelation->connect();
-//require_once "entityMail.php";
-//require_once "relationEventiFoto.php";
+
+
+require_once "relationDeveloperFoto.php";
 
 
 /*entities*/
+$developerEntity->connect();
 
-//$tagEntity->connect();
 /*relation*/
-//$entityMail->connect();
-//$eventiImageRelation->connect();
+
+$developerImageRelation->connect();
