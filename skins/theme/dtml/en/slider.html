@@ -1,61 +1,22 @@
-<!-- start: Main Slider -->
-<style type="text/css" media="screen">
+{if $instances != null || $instance != null}
+<!-- Slider
+======================================================================== -->
+<div class="slider-wrapper">
+	<div id="header_slider" class="owl-carousel owl-theme">
+		{foreach from=$instances item=instance}
+			{foreach from=$instance->sys_image_sys_slider item=image}
 
-.ls-layer,
-.ls-layer * {
-    font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', Helvetica, Arial, Serif;
-    font-weight: normal;
-}
-
-.ls-layer p {
-    padding: 0px 10px;              
-    line-height: 40px;
-    box-shadow: 0px 4px 10px -5px black;
-    text-shadow: none;
-    font-size: 22px;
-    border-radius: 4px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-}
-
-.l1-s1 {
-    height: 80px;
-    color: black;
-    background: white;
-    opacity: .9;
-    width: 650px;
-    text-align: center;
-}
-
-.l2-s1 {
-    height: 40px;
-    color: white;
-    background: black;
-    opacity: .65;
-    white-space: nowrap;
-}
-
-.l3-s1 {
-    height: 40px;
-    color: black;
-    background: white;
-    opacity: .9;
-    white-space: nowrap;
-}       
-            
-</style>
-
-<div id="layerslider-container-fw">
-        
-    <div id="layerslider-fw" style="width: 100%; height: 400px;">
-        {foreach from=$slider_instance->sys_image_sys_slider item=image}
-        <div class="ls-layer" style="z-index: {$image->id_sys_image->id}; slidedirection: top; slidedelay: 7000; durationin: 1500; durationout: 1500; delayout: 500;">
-            <img src="data:image/jpg;base64,{$image->id_sys_image->data} alt="{$image->id_sys_image->alt}" class="ls-bg">
-            <p class="ls-s2 l1-s1" style="position: absolute; top:240px; left: 50%; slidedirection : bottom; slideoutdirection : left; durationin : 3000; durationout : 750; easingin : easeOutElastic; easingout : easeInBack; delayin : 1000;">{$image->id_sys_image->caption}</p>
-        </div>
+		<div class="item slider-info" style="background-color:{$image->id_sys_slider->effetto};">
+			<div class="text-slider">
+            	<p>{$image->id_sys_slider->titolo}</p>
+				<a href="#" id="scroll_to"><span class="scroll-down"><span class="img-scroll-down"></span></span>{$image->id_sys_image->caption}</a>
+			</div>
+			<img width="{$image->id_sys_slider->width}" height="{$image->id_sys_slider->height}" src="data:image/jpg;base64,{$image->id_sys_image->data}" class="attachment-full wp-post-image" alt="{$image->id_sys_image->alt}" /> 
+		</div>
+			{/foreach}
         {/foreach}
-
-
+    
     </div>
-            
-</div>  <!-- end: Main Slider -->
+</div>
+<!-- Slider / End -->
+{/if}

@@ -35,8 +35,7 @@ class InstallerFinishState extends InstallerState {
 	public function updateOutput() {
 
 		if ($this->validData) {
-			//header('Location: admin.php');
-			echo 'go to admin';
+			header('Location: admin.php');
 		}
 		else{
 			
