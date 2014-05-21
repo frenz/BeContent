@@ -40,10 +40,12 @@ class InitGraphic{
       $sliderEntity = $GLOBALS['sys_slider'];
       $imageEntity =$GLOBALS['sys_image'];
       $imageSliderRelation = $GLOBALS['sys_image_sys_slider'];
+	  $developerImageRelation = $GLOBALS['developer_sys_image'];
       $newsEntity = $GLOBALS['sys_news'];
       $groupsEntity = $GLOBALS['sys_group'];
       $userEntity = $GLOBALS['sys_user'];
-
+	  $developerEntity = $GLOBALS['developer'];  
+	
       /*Creazione oggetto di tipo menu*/
       $menuTemplate = new Skinlet('menu');
       $menu = new Content($menuEntity,$menuEntity);
@@ -66,6 +68,11 @@ class InitGraphic{
       $pageTemplate = new Skinlet('page');
       $page = new Content($pageEntity);
       $page->apply($pageTemplate);
+
+	  //Creazione oggetto di tipo developer
+	  $developerTemplate = new Skinlet('developer');
+	  $developer = new Content($developerEntity, $developerImageRelation, $imageEntity);
+	  $developer->apply($developerTemplate);
       
 
 
@@ -108,6 +115,7 @@ class InitGraphic{
        $skin->setContent("news", $newsTemplate->get());
        $skin->setContent("slider", $sliderTemplate->get());
        $skin->setContent("page", $pageTemplate->get());
+	   $skin->setContent("developer", $developerTemplate->get());
        $skin->setContent("header", $header->get());
        $skin->setContent("footer", $footer->get());
    }

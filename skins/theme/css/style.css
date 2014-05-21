@@ -320,7 +320,7 @@ a, a:hover{
 	vertical-align: middle;
 }
 .img-scroll-down{
-	background:url(images/arrow.png) no-repeat;
+	background:url(../images/arrow.png) no-repeat;
 	height:17px;
 	width:17px;
 	position:absolute;
@@ -343,7 +343,7 @@ a#scroll_to {
 	width:17px;
 	height:17px;
 	display:block;
-	background:url(images/arrow.png) no-repeat;
+	background:url(../images/arrow.png) no-repeat;
 	background-position:-35px 0px;
 }
 .arrow-right-slider{
@@ -885,7 +885,7 @@ ul.portfolio-category li a:hover span.icon-categories i, ul.portfolio-category l
 .arrow-port{
 	width:17px;
 	height:17px;
-	background:url(images/arrow.png) no-repeat center center;
+	background:url(../images/arrow.png) no-repeat center center;
 	background-position:0 0;
 	display:inline-block;
 	position:relative;
@@ -1681,7 +1681,7 @@ footer {
 	        transition: all 0.5s ease;
 }
 .quote-charater{
-	background:url(images/arrow.png) no-repeat;
+	background:url(../images/arrow.png) no-repeat;
 	width:40px;
 	height:40px;
 	display:block;
