@@ -1,18 +1,20 @@
 <?php
 
 require_once "include/beContent.inc.php";
-require_once "include/content.inc.php";
+require_once "include/view/template/InitGraphic.php";
 
+$newsPageEntity = $GLOBALS['sys_news'];
 
-$main = new Skin();
+$main = new Skin("theme");
+InitGraphic::getInstance()->createGraphic($main);
 
-InitGraphic::getInstance()->createGraphic($main,false,false);
+//Creazione oggetto di tipo news
+$newsPageTemplate = new Skinlet('newsPage');
+$newsPage = new Content($newsPageEntity);
+$newsPage->setOrderFields("id DESC");
+$newsPage->apply($newsPageTemplate);
 
-
-$news = new Content($newsEntity, $usersEntity);
-$news->setOrderFields("date DESC");
-
-$main->setContent("body", $news->get());
+$main->setContent("body", $newsPage->get());
 $main->close();  
 
 ?>

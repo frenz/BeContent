@@ -4,12 +4,56 @@ session_start();
 require_once "include/beContent.inc.php";
 require_once "include/view/template/InitGraphic.php";
 
-$main = new Skin();
+$sliderEntity = $GLOBALS['sys_slider'];
+$imageEntity =$GLOBALS['sys_image'];
+$imageSliderRelation = $GLOBALS['sys_image_sys_slider'];
+$menuEntity = $GLOBALS['sys_menu'];
+$newsEntity = $GLOBALS['sys_news'];
+$developerImageRelation = $GLOBALS['developer_sys_image'];
+$developerEntity = $GLOBALS['developer'];  
+$pageEntity = $GLOBALS['sys_page'];
+
+$main = new Skin("theme");
 InitGraphic::getInstance()->createGraphic($main);
+
+//Creazione oggetto di tipo menu
+$menuTemplate = new Skinlet('menu');
+$menu = new Content($menuEntity,$menuEntity);
+$menu->setFilter("parent_id", 0);
+$menu->setOrderFields("sys_menu_position",'sys_menu_parent',"sys_menu0_position");
+$menu->apply($menuTemplate); /* apply(ogetto,'nome prefisso istanza') */
+
+//Creazione oggetto di tipo slider
+$sliderTemplate = new Skinlet('slider');
+$slider = new Content($sliderEntity, $imageSliderRelation, $imageEntity);
+$slider->apply($sliderTemplate);
+
+//Creazione oggetto di tipo news
+$newsTemplate = new Skinlet('newsHome');
+$news = new Content($newsEntity);
+$news->setOrderFields("id DESC");
+$news->apply($newsTemplate);
+
+//Creazione oggetto di tipo developer
+$developerTemplate = new Skinlet('developer');
+$developer = new Content($developerEntity, $developerImageRelation, $imageEntity);
+$developer->apply($developerTemplate);
+
+//Creazione oggetto di tipo page
+$pageTemplate = new Skinlet('page');
+$page = new Content($pageEntity);
+$page->apply($pageTemplate);
+
+
 
 $home = new Skinlet("home");
 
-$main->setContent('body', $home->get());
+$main->setContent("slider", $sliderTemplate->get());
+$main->setContent("body", $home->get());
+$main->setContent("menu", $menuTemplate->get());
+$main->setContent("news", $newsTemplate->get());
+$main->setContent("developer", $developerTemplate->get());
+$main->setContent("page", $pageTemplate->get());
 
 $main->close();
 

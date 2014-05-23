@@ -6,11 +6,9 @@ include/libs/smarty/templates_c/*
 cache/*
 configs/*
 skins/theme/dtml/it/search/*
-skins/theme/dtml/it/single/*
-skins/theme/dtml/it/multiple/*
+
 skins/theme/dtml/en/search/*
-skins/theme/dtml/en/single/*
-skins/theme/dtml/en/multiple/*
+
 skins/system/dtml/it/search/*
 skins/system/dtml/it/single/*
 skins/system/dtml/it/multiple/*
