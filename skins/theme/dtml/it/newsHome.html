@@ -11,6 +11,7 @@
 				</div></div></div>
 <!-- END ET-HEADING-TITLE-BLOCK -->
 	{foreach from=$instances item=instance}
+	{if $instance->active != null}
 	<div class="blog-wrapper animation-wrapper span12" style="margin:10px 0 50px"><div class="row">		<div class="col-md-6 et-blog-post  " >
 					<div class="clearfix"></div>
 					<div class="et-post-data container">
@@ -39,7 +40,7 @@
 	</div></div></div></div>
 	    </div>
 	</div>
-	
+	{/if}
 	{/foreach}
 {/if}
 <!-- END ET-BLOG-BLOCK-->

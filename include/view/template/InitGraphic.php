@@ -32,7 +32,7 @@ class InitGraphic{
     * header e footer: header e footer del tema
     *
     */
-   public function createGraphic($skin, $hasNews = false)
+   public function createGraphic($skin)
    {
 	  $actualUser =  $_SESSION['user']['username'];
       $groupsEntity = $GLOBALS['sys_group'];
