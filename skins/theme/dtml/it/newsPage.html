@@ -1,0 +1,46 @@
+{if $instances != null || $instance != null}
+<!-- News
+======================================================================== -->
+	<div id="blog" class=" template-wrap cf"  >
+			<div class="parallax" style=" background-color:#ffffff; background-position:top left; background-repeat:repeat; " ></div>
+			<div class="container"><div class="row"><div class="animation-wrapper col-md-12" style="margin:30px 0 60px;" >
+				<div class="heading-title-wrapper " >
+					<h2 class="title">News</h2>
+					<span class="line-title" style="background-color:#cc467c"></span>
+					<span class="sub-title">Le nostre news.</span>
+				</div></div></div>
+<!-- END ET-HEADING-TITLE-BLOCK -->
+	{foreach from=$instances item=instance}
+	{if $instance->active != null}
+	<div class="blog-wrapper animation-wrapper span12" style="margin:10px 0 50px"><div class="row">		<div class="col-md-6 et-blog-post  " >
+					<div class="clearfix"></div>
+					<div class="et-post-data container">
+						<div class="row">
+							<div class="col-md-2 col-sm-2 et-post-data-left">
+								<span class="et-post-month">{$instance->date}</span>
+							</div>
+							<div class="col-md-10 col-sm-10 et-post-data-right">
+								<h1 class="title-blog"><a href="http://demo.enginethemes.com/oneengine/new-post-2/">{$instance->title}</a></h1>
+								<div class="et-post-info">
+									Post by admin | <ul class="post-categories">
+		<li><a href="http://demo.enginethemes.com/oneengine/category/uncategorized/" title="View all posts in Uncategorized" rel="category tag">Uncategorized</a></li></ul> | No Comments 
+								</div>
+								<div class="clearfix"></div>
+								<div class="et-post-excerpt">
+									<p>{$instance->body}</p>
+								</div>
+								<div class="clearfix"></div>
+								<a href="/news.php" class="read-more"><i class="fa fa-arrow-right"></i>&nbsp;&nbsp;Read more</a>
+							</div>
+						</div>
+					</div>
+				</div>
+					
+			<div class="clearfix"></div><div class="clearfix"></div><div class="view-all-blog-wrapper"><a href="http://demo.enginethemes.com/oneengine/blog/" class="view-all-blog"><span><i class="fa fa-plus"></i></span>View All News</a></div></div></div><!-- END ET-BLOG-BLOCK-->
+	</div></div></div></div>
+	    </div>
+	</div>
+	{/if}
+	{/foreach}
+{/if}
+<!-- END ET-BLOG-BLOCK-->
