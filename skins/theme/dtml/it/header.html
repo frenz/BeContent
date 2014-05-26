@@ -1,10 +1,10 @@
 {if $instance != null }
-         <p>{$instance->username} (<a href="#"></a>)</p>
-         <a class="logout" href="logout.php" title="Logout">Logout</a>
+<p>{$instance->username} (<a href="index.php#"></a>)</p>
+<a class="logout" href="logout.php" title="Logout">Logout</a>
 {else}
-         <div id="form-login">
-    		<h1 class="bc-logo"></h1>
-    		<form action="login.php" method="post">
+<div id="form-login">
+    <h1 class="bc-logo"></h1>
+	<form action="login.php" method="post">
         <table>
             <tr>
                 <td>Username</td>

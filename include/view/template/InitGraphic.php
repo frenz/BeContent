@@ -34,7 +34,7 @@ class InitGraphic{
     */
    public function createGraphic($skin)
    {
-	  $actualUser =  $_SESSION['user']['username'];
+      $actualUser =  $_SESSION['user']['username'];
       $groupsEntity = $GLOBALS['sys_group'];
       $userEntity = $GLOBALS['sys_user'];
 

@@ -47,6 +47,7 @@ $page->apply($pageTemplate);
 
 
 $home = new Skinlet("home");
+$contact = new Skinlet("contact");
 
 $main->setContent("slider", $sliderTemplate->get());
 $main->setContent("body", $home->get());
@@ -54,6 +55,7 @@ $main->setContent("menu", $menuTemplate->get());
 $main->setContent("news", $newsTemplate->get());
 $main->setContent("developer", $developerTemplate->get());
 $main->setContent("page", $pageTemplate->get());
+$main->setContent("contact", $contact->get());
 
 $main->close();
 
