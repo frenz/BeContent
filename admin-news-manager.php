@@ -20,6 +20,10 @@ $form->addLongDate("date", "Data", MANDATORY);
 $form->addEditor("body", "Testo", 20, 50);
 $form->addCheck("active", "Attiva");
 
+$imageForm = new ImageForm('imageEntry',$newsEntity);
+$imageForm->addImage('foto','Foto');
+$form->triggers($imageForm);
+
 $main->setContent("body", $form->requestAction());
 
 $main->close();  

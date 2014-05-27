@@ -11,9 +11,10 @@ $main = new Skin("system");
 
 InitGraphic::getInstance()->createSystemGraphic($main);
 
-$form = new Form("dataEntry", $developerEntity);
+$form = new Form("dataEntry",$developerEntity);
 
 $form->addTitleForm("Developer Management");
+
 $form->addSection('developer details');
 $form->addText("name", "Nome", 255, MANDATORY);
 $form->addText("surname", "Cognome", 255, MANDATORY);
@@ -25,11 +26,8 @@ $imageForm = new ImageForm('imageEntry',$developerEntity);
 $imageForm->addImage('foto','Foto');
 $form->triggers($imageForm);
 
-$relationForm = new RelationForm("dataEntry4", $developerImageRelation);
-$relationForm->addSection('Immagini da legare');
-$relationForm->addRelationManager("id_sys_image", "Immagini");
-$form->triggers($relationForm);
-
 $main->setContent("body", $form->requestAction());
 
-$main->close();
+$main->close();  
+
+?>

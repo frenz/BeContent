@@ -37,3 +37,4 @@ class EntityNews extends Entity
 	}
 }
 $newsEntity = new EntityNews($database, "sys_news", WITH_OWNER);
+$newsEntity->addReference($imageEntity,"foto");

@@ -16,5 +16,7 @@ class EntityDeveloper extends Entity
 }
 
 $developerEntity = new EntityDeveloper($database,
-    Config::getInstance()->getConfigurations()['database']['prefix']."developer");
+Config::getInstance()->getConfigurations()['database']['prefix']."developer");
 $developerEntity->addReference($imageEntity, 'foto');
+
+?>
