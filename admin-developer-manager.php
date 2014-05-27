@@ -22,9 +22,14 @@ $form->addText("email", "E-Mail", 255);
 $form->addText("gitaccount", "Account", 255);
 $form->addLongDate("birthday", "Data_Di_Nascita");
 
-$imageForm = new ImageForm('imageEntry',$developerEntity);
-$imageForm->addImage('foto','Foto');
+$imageForm = new ImageForm('imageEntry4',$developerImageRelation);
+$imageForm->addImage("id_sys_image", "Immagini");
 $form->triggers($imageForm);
+
+$relationForm = new RelationForm("dataEntry4", $developerImageRelation);
+$relationForm->addSection('Immagini da legare');
+$relationForm->addRelationManager("id_sys_image", "Immagini");
+$form->triggers($relationForm);
 
 $main->setContent("body", $form->requestAction());
 

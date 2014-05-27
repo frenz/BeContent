@@ -24,6 +24,11 @@ $imageForm = new ImageForm('imageEntry',$newsEntity);
 $imageForm->addImage('foto','Foto');
 $form->triggers($imageForm);
 
+$relationForm = new RelationForm("dataEntry5", $newsImageRelation);
+$relationForm->addSection('Immagini da legare');
+$relationForm->addRelationManager("id_sys_image", "Immagini");
+$form->triggers($relationForm);
+
 $main->setContent("body", $form->requestAction());
 
 $main->close();  

@@ -7,6 +7,7 @@ require_once "include/view/template/InitGraphic.php";
 $sliderEntity = $GLOBALS['sys_slider'];
 $imageEntity =$GLOBALS['sys_image'];
 $imageSliderRelation = $GLOBALS['sys_image_sys_slider'];
+$newsImmageRelation = $GLOBALS['sys_news_sys_slider'];
 $menuEntity = $GLOBALS['sys_menu'];
 $newsEntity = $GLOBALS['sys_news'];
 $developerImageRelation = $GLOBALS['developer_sys_image'];
@@ -30,8 +31,8 @@ $slider->apply($sliderTemplate);
 
 //Creazione oggetto di tipo news
 $newsTemplate = new Skinlet('newsHome');
-$news = new Content($newsEntity);
-$news->setOrderFields("id DESC");
+$news = new Content($newsEntity, $newsImageRelation, $imageEntity);
+
 $news->apply($newsTemplate);
 
 //Creazione oggetto di tipo developer
