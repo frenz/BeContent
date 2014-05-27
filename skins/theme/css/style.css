@@ -806,7 +806,7 @@ ul.portfolio-category li a span.icon-categories{
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
 	border-radius: 50%;
-	border:2px solid #bdc3c7;
+	border:2px solid #fff;
 	margin:0 auto 5px;
 	/*TRANSISTIONS*/
 	-webkit-transition: all 0.5s ease;
@@ -816,7 +816,7 @@ ul.portfolio-category li a span.icon-categories{
 	        transition: all 0.5s ease;
 }
 ul.portfolio-category li a span.icon-categories i{
-	color: #bdc3c7;
+	color: #fff;
 	font-size:16px;
 	line-height:2.3;
 	/*TRANSISTIONS*/
@@ -827,7 +827,7 @@ ul.portfolio-category li a span.icon-categories i{
 	        transition: all 0.5s ease;
 }
 ul.portfolio-category li a{
-	color: #bdc3c7;
+	color: #fff;
 	font-size: 18px;
 	display:inline-block;
 	/*TRANSISTIONS*/

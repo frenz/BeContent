@@ -214,6 +214,17 @@ function init($usersEntity) {
                 "id_entities" => "",
                 "position"	=> "9")
         );
+        $GLOBALS['servicesEntity']->insertItem(array(
+                "id"		=> "16",
+                "name"		=> "Taxonomy",
+                "script"	=> "admin-taxonomy-manager.php",
+                "entry"		=> "Taxonomy",
+                "servicecategory" => "2",
+                "visible"	=> "*",
+                "des"		=> "",
+                "id_entities" => "",
+                "position"	=> "10")
+        );
 
 		$GLOBALS['servicesGroupsRelation']->insertItem(null,"1","1");
 		$GLOBALS['servicesGroupsRelation']->insertItem(null,"2","1");
@@ -230,6 +241,7 @@ function init($usersEntity) {
 		$GLOBALS['servicesGroupsRelation']->insertItem(null,"13","1");
 		$GLOBALS['servicesGroupsRelation']->insertItem(null,"14","1");
 		$GLOBALS['servicesGroupsRelation']->insertItem(null,"15","1");
+		$GLOBALS['servicesGroupsRelation']->insertItem(null,"16","1");
 
 	}
 }

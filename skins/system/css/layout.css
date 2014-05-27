@@ -324,6 +324,9 @@ background: url(../images/icn_profile.png) no-repeat center left;
 #sidebar li.icn_developer a {
 background: url(../images/icn_developer.png) no-repeat center left;
 }
+#sidebar li.icn_developer a {
+background: url(../images/icn_taxonomy.png) no-repeat center left;
+}
 #sidebar li.icn_folder a {
 background: url(../images/icn_folder.png) no-repeat center left;
 }
