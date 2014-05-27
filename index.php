@@ -13,6 +13,8 @@ $newsEntity = $GLOBALS['sys_news'];
 $developerImageRelation = $GLOBALS['developer_sys_image'];
 $developerEntity = $GLOBALS['developer'];  
 $pageEntity = $GLOBALS['sys_page'];
+$taxonomyEntity = $GLOBALS['taxonomy'];
+$taxonomyImageRelation = $GLOBALS['taxonomy_sys_image'];
 
 $main = new Skin("theme");
 InitGraphic::getInstance()->createGraphic($main);
@@ -32,13 +34,17 @@ $slider->apply($sliderTemplate);
 //Creazione oggetto di tipo news
 $newsTemplate = new Skinlet('newsHome');
 $news = new Content($newsEntity, $newsImageRelation, $imageEntity);
-
 $news->apply($newsTemplate);
 
 //Creazione oggetto di tipo developer
 $developerTemplate = new Skinlet('developer');
 $developer = new Content($developerEntity, $developerImageRelation, $imageEntity);
 $developer->apply($developerTemplate);
+
+//Creazione oggetto di tipo taxonomy
+$taxonomyTemplate = new Skinlet('gallery');
+$taxonomy = new Content($taxonomyEntity, $taxonomyImageRelation, $imageEntity);
+$taxonomy->apply($taxonomyTemplate);
 
 //Creazione oggetto di tipo page
 $pageTemplate = new Skinlet('page');
@@ -55,6 +61,7 @@ $main->setContent("body", $home->get());
 $main->setContent("menu", $menuTemplate->get());
 $main->setContent("news", $newsTemplate->get());
 $main->setContent("developer", $developerTemplate->get());
+$main->setContent("gallery", $taxonomyTemplate->get());
 $main->setContent("page", $pageTemplate->get());
 $main->setContent("contact", $contact->get());
 
