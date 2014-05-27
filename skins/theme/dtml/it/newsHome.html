@@ -20,6 +20,13 @@
 		{break}
 	{else}
 		<div class="col-md-6 et-blog-post  ">
+			{foreach from=$instance->sys_news_sys_image item=image}
+			<div class="image-blog-wrapper">
+								<img width="1920" height="1280" src="{$image->id_sys_image->data}" class="et-post-thumbnail img-responsive wp-post-image" alt="blog-2" />                    <div class="et-post-data-left mobile-blog">
+			                        <span class="et-post-month">{$istance->date}</span>
+			                    </div>
+			                </div>
+			{/foreach}
 	        <div class="et-post-data container">
 	            <div class="row">
 	                <div class="col-md-2 col-sm-2 et-post-data-left">
