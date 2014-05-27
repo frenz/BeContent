@@ -14,7 +14,7 @@ InitGraphic::getInstance()->createGraphic($main);
 
 //Creazione oggetto di tipo news
 $newsTemplate = new Skinlet('newsPage');
-$news = new Content($newsEntity);
+$news = new Content($newsEntity, $newsImageRelation, $imageEntity);
 $news->setFilter('id', $_REQUEST['news']);
 $news->apply($newsTemplate);
 

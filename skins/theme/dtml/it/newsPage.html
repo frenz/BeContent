@@ -1,15 +1,19 @@
-<div id="liveReport">
-	{if $instances != null || $instance != null}
-		{foreach from=$instances item=instance}
+
+{if $instances != null || $instance != null}
+	{foreach from=$instances item=instance}
+		{foreach from=$instance->sys_news_sys_image item=image}
+			<div class="blog-header-wrapper">
+				<div class="blog-header-img" style="background-image:url(data:image/jpg;base64,{$image->id_sys_image->data}); background-color:#cccccc; background-repeat:no-repeat; background-size:cover; background-attachment: fixed;" ></div>
+			</div>
+		{/foreach}
 	<!-- News
 	======================================================================== -->
-	<br>
 	<div class="clearfix"></div> 
 	<div class="container">
 		<div class="row">
 	    	<div class="single-blog-desktop">
 	            <div class="col-md-1 col-sm-1 et-post-data-left single-blog">
-	                <a href="/index.php" class="home-icon"><i class="fa fa-home"></i></a>
+	                <a href="/index.php#news" class="home-icon"><i class="fa fa-home"></i></a>
 	                <span class="et-post-month">{$instance->date}</span>
 	            </div>
 
@@ -40,12 +44,14 @@
 				</div>			</div>			
 			</div>		
 		</div>
-	
-	
-
-
+		
 		{/foreach}
 	{/if}
 	<!-- END ET-BLOG-BLOCK-->
 	<div class="clearfix"></div> 
-</div>
+
+
+
+
+
+
