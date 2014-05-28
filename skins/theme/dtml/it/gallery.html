@@ -14,52 +14,32 @@
 		<div class="portfolio-cat-wrapper container ">
 			<div class="row">
 				<div class="col-md-12">
-	{foreach from=$instances item=instance}
-				
-								<ul class="portfolio-category" id="portfolio_filter">
-									{if $instance->name == 'All'}
-										<li>
-											<a id="all_click" href="#" data-filter="*">
-								        		<span class="icon-categories"><i class="{$instance->icon}"></i></span>{$instance->name}
-											</a>
-										</li>
-									{else}	
-										<li>
-											<a href="#" data-filter=".{$instance->name}">
-												<span class="icon-categories"><i class="{$instance->icon}"></i></span>{$instance->name}                     
-								 			</a>
-										</li>
-									{/if}
-					
-		{/foreach}
+					<ul class="portfolio-category" id="portfolio_filter">
+						<li>
+							<a id="all_click" href="#" data-filter="*">
+				        		<span class="icon-categories"><i class="fa fa-align-justify"></i></span>All
+							</a>
+						</li>
+						{foreach from=$instances item=instance}
+							<li>
+								<a href="#" data-filter=".{$instance->name}">
+									<span class="icon-categories"><i class="{$instance->icon}"></i></span>{$instance->name}                     
+								</a>
+							</li>	
+						{/foreach}
+					</ul>
+				</div>
 			</div>
 		</div>
-	</div>
-		<div class="portfolio-list isotope animation-wrapper" id="portfolio_list">	
-			<div class="item isotope-item website ">
-				<a href="#" data-id="106">
-				<img width="480" height="480" src="http://demo.enginethemes.com/oneengine/wp-content/uploads/2014/04/Worms2-480x480.jpg" class="et-portfolio-thumbnail img-responsive wp-post-image" alt="Worms" />                <div class="hover"><span><i class="fa fa-search"></i></span></div>
-				</a>
-			</div>
-			{foreach from=$instance->taxonomy_sys_image item=image}
-			<div class="item isotope-item branding ">
-				<a href="#" data-id="104">
-				<img width="480" height="480" src="data:image/jpg;base64,{$image->id_sys_image->data}" class="et-portfolio-thumbnail img-responsive wp-post-image" alt="tatooine1650x1080" /><div class="hover"><span><i class="fa fa-search"></i></span></div>
-				</a>
-			</div>
+		<div class="portfolio-list isotope animation-wrapper" id="portfolio_list">
+			{foreach from=$instances item=instance}
+					{foreach from=$instance->taxonomy_sys_image item=image}
+						<div class="item isotope-item {$instance->name}">
+							<a href="#" data-id="$image->id_sys_image->id">
+								<img width="480" height="480" src="data:image/jpg;base64,{$image->id_sys_image->data}" class="et-portfolio-thumbnail img-responsive wp-post-image" alt="Worms" /><div class="hover"><span><i class="fa fa-search"></i></span></div>
+							</a>
+						</div>
+					{/foreach}
 			{/foreach}
-		</div></div><div id="portfolio_content">
-					<div class="container">
-						<div class="row">
-							<div class="port-control col-md-12">
-								<a class="prev" href="#"><span class="arrow-port left"></span>&nbsp;&nbsp;Prev</a> 
-								<a href="#" class="close-port"><i class="fa fa-times"></i></a> 
-								<a href="#" class="next">Next&nbsp;&nbsp;<span class="arrow-port right"></span></a>
-							</div>
-						</div>
-						<div class="port-content">	
-						</div>
-					</div>
- 				</div></div></div>
-
+			</div></div></div>
 {/if}
