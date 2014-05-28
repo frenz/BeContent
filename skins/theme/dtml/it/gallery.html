@@ -31,15 +31,15 @@
 				</div>
 			</div>
 		</div>
-		<div class="portfolio-list isotope animation-wrapper" id="portfolio_list">
+		<div class="portfolio-list isotope animation-wrapper wrapper" id="portfolio_list">
 			{foreach from=$instances item=instance}
 					{foreach from=$instance->taxonomy_sys_image item=image}
 						<div class="item isotope-item {$instance->name}">
-							<a href="#" data-id="$image->id_sys_image->id">
+							<a href="data:image/jpg;base64,{$image->id_sys_image->data}" rel="lightbox" data-id="$image->id_sys_image->id">
 								<img width="480" height="480" src="data:image/jpg;base64,{$image->id_sys_image->data}" class="et-portfolio-thumbnail img-responsive wp-post-image" alt="Worms" /><div class="hover"><span><i class="fa fa-search"></i></span></div>
 							</a>
 						</div>
 					{/foreach}
 			{/foreach}
-			</div></div></div>
+			</div></div></div>	
 {/if}
