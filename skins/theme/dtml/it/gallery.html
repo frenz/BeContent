@@ -10,20 +10,31 @@
 				<span class="sub-title">Le nostre immagini.</span>
 			</div><!-- END ET-HEADING-TITLE-BLOCK -->
 </div></div></div>
-	{foreach from=$instances item=instance}
-		<div class="clearfix" style="height:10px"></div><div id="aq-block-19-27" class="aq-block aq-block-oe_portfolio_block"><div id="portfolio-page" class="portfolio-wrapper" style="margin:10px 0 0px;">		<div class="portfolio-cat-wrapper container ">
+	<div class="clearfix" style="height:10px"></div><div id="aq-block-19-27" class="aq-block aq-block-oe_portfolio_block"><div id="portfolio-page" class="portfolio-wrapper" style="margin:10px 0 0px;">
+		<div class="portfolio-cat-wrapper container ">
 			<div class="row">
 				<div class="col-md-12">
-					<ul class="portfolio-category" id="portfolio_filter">
-						<li>
-							<a id="all_click" href="#" data-filter="*">
-                            	<span class="icon-categories"><i class="{$instance->icon}"></i></span>{$instance->name}
-							</a>
-						</li>						
-				</div>
+	{foreach from=$instances item=instance}
+				
+								<ul class="portfolio-category" id="portfolio_filter">
+									{if $instance->name == 'All'}
+										<li>
+											<a id="all_click" href="#" data-filter="*">
+								        		<span class="icon-categories"><i class="{$instance->icon}"></i></span>{$instance->name}
+											</a>
+										</li>
+									{else}	
+										<li>
+											<a href="#" data-filter=".{$instance->name}">
+												<span class="icon-categories"><i class="{$instance->icon}"></i></span>{$instance->name}                     
+								 			</a>
+										</li>
+									{/if}
+					
+		{/foreach}
 			</div>
 		</div>
-		{/foreach}
+	</div>
 		<div class="portfolio-list isotope animation-wrapper" id="portfolio_list">	
 			<div class="item isotope-item website ">
 				<a href="#" data-id="106">
@@ -33,11 +44,11 @@
 			{foreach from=$instance->taxonomy_sys_image item=image}
 			<div class="item isotope-item branding ">
 				<a href="#" data-id="104">
-				<img width="480" height="480" src="data:image/jpg;base64,{$image->id_sys_image->data}" class="et-portfolio-thumbnail img-responsive wp-post-image" alt="tatooine1650x1080" />                <div class="hover"><span><i class="fa fa-search"></i></span></div>
+				<img width="480" height="480" src="data:image/jpg;base64,{$image->id_sys_image->data}" class="et-portfolio-thumbnail img-responsive wp-post-image" alt="tatooine1650x1080" /><div class="hover"><span><i class="fa fa-search"></i></span></div>
 				</a>
 			</div>
 			{/foreach}
-		</div><div id="portfolio_content">
+		</div></div><div id="portfolio_content">
 					<div class="container">
 						<div class="row">
 							<div class="port-control col-md-12">
