@@ -2,53 +2,43 @@
 <!-- Our Work
 ======================================================================== -->
 <div id="our-work" class=" template-wrap cf" style=" padding-top:30px;"  >
-		<div class="parallax" style=" background-color:#ffffff; background-position:top left; background-repeat:repeat; " ></div>
+		<div class="parallax" style=" background-color:#f1c40f; background-position:top left; background-repeat:repeat; " ></div>
 		<div class="container"><div class="row"><div class="animation-wrapper col-md-12" style="margin:10px 0 10px;" >
 			<div class="heading-title-wrapper animated fadeInDown" style="-webkit-animation-duration: 900ms; -moz-animation-duration: 900ms; -o-animation-duration: 900ms;animation-duration: 900ms; animation-delay:0ms; -webkit-animation-delay:0ms; -moz-animation-delay:0ms;-o-animation-delay:0ms;">
-				<h2 class="title">Our works</h2>
+				<h2 class="title">Gallery</h2>
 				<span class="line-title" style="background-color:#8e44ad"></span>
-				<span class="sub-title">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo.
-</span>
-			</div></div><!-- END ET-HEADING-TITLE-BLOCK -->
+				<span class="sub-title">Le nostre immagini.</span>
+			</div><!-- END ET-HEADING-TITLE-BLOCK -->
 </div></div></div>
 	{foreach from=$instances item=instance}
+	{$instance->name}
 		<div class="clearfix" style="height:10px"></div><div id="aq-block-19-27" class="aq-block aq-block-oe_portfolio_block"><div id="portfolio-page" class="portfolio-wrapper" style="margin:10px 0 0px;">		<div class="portfolio-cat-wrapper container ">
 			<div class="row">
 				<div class="col-md-12">
 					<ul class="portfolio-category" id="portfolio_filter">
 						<li>
-							<a id="all_click" href="#" data-filter="*">
-                            	<span class="icon-categories"><i class="fa fa-align-justify"></i></span>{$instance->name}
+							{if $instance->name == 'all'}
+							<a id=href="#" data-filter="*">			
+                            	<span class="icon-categories"><i class="{$instance->icon}"></i></span>{$instance->name}
 							</a>
+							{else}
+								<a id=href="#" data-filter=".{$instance->name}">			
+                            	<span class="icon-categories"><i class="{$instance->icon}"></i></span>{$instance->name}
+								</a>
+							{/if}
 						</li>						
 				</div>
 			</div>
 		</div>
-		<div class="portfolio-list isotope animation-wrapper" id="portfolio_list">	
-			<div class="item isotope-item website ">
-				<a href="#" data-id="106">
-				<img width="480" height="480" src="http://demo.enginethemes.com/oneengine/wp-content/uploads/2014/04/Worms2-480x480.jpg" class="et-portfolio-thumbnail img-responsive wp-post-image" alt="Worms" />                <div class="hover"><span><i class="fa fa-search"></i></span></div>
-				</a>
-			</div>
-			{foreach from=$instance->taxonomy_sys_image item=image}
-			<div class="item isotope-item branding ">
-				<a href="#" data-id="104">
-				<img width="480" height="480" src="data:image/jpg;base64,{$image->id_sys_image->data}" class="et-portfolio-thumbnail img-responsive wp-post-image" alt="tatooine1650x1080" />                <div class="hover"><span><i class="fa fa-search"></i></span></div>
+		{/foreach}
+		{foreach from=$instance->taxonomy_sys_image item=image}
+			<div class="portfolio-list isotope animation-wrapper" id="portfolio_list">	
+			<div class="item isotope-item {$instance->name}">
+				<a href="#" data-id="{$image->id_sys_image->id}">
+				<img width="480" height="480" src="{$image->id_sys_image->data}" class="et-portfolio-thumbnail img-responsive wp-post-image"  />                <div class="hover"><span><i class="fa fa-search"></i></span></div>
 				</a>
 			</div>
 			{/foreach}
-		</div><div id="portfolio_content">
-					<div class="container">
-						<div class="row">
-							<div class="port-control col-md-12">
-								<a class="prev" href="#"><span class="arrow-port left"></span>&nbsp;&nbsp;Prev</a> 
-								<a href="#" class="close-port"><i class="fa fa-times"></i></a> 
-								<a href="#" class="next">Next&nbsp;&nbsp;<span class="arrow-port right"></span></a>
-							</div>
-						</div>
-						<div class="port-content">	
-						</div>
-					</div>
- 				</div></div></div>
-{/foreach}
+</div>
+</div></div></div>
 {/if}
