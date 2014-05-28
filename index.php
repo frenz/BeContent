@@ -15,6 +15,7 @@ $developerEntity = $GLOBALS['developer'];
 $pageEntity = $GLOBALS['sys_page'];
 $taxonomyEntity = $GLOBALS['taxonomy'];
 $taxonomyImageRelation = $GLOBALS['taxonomy_sys_image'];
+$loginEntity = $GLOBAL['sys_log'];
 
 $main = new Skin("theme");
 InitGraphic::getInstance()->createGraphic($main);
@@ -51,6 +52,11 @@ $pageTemplate = new Skinlet('page');
 $page = new Content($pageEntity);
 $page->apply($pageTemplate);
 
+//Creazione oggetto di tipo login
+$loginTemplate = new Skinlet('login');
+$login = new Content($loginEntity);
+$login->apply($loginTemplate);
+
 
 
 $home = new Skinlet("home");
@@ -64,6 +70,7 @@ $main->setContent("developer", $developerTemplate->get());
 $main->setContent("gallery", $taxonomyTemplate->get());
 $main->setContent("page", $pageTemplate->get());
 $main->setContent("contact", $contact->get());
+$main->setContent("login", $loginTemplate->get());
 
 $main->close();
 

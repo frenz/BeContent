@@ -1,5 +1,46 @@
-<div id="welcome-user">
-    <p>
-    Welcome Fra!!!!!
-    </p>
+<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+			    <div class="container-fluid">
+			    	<div class="row-fluid">
+				    	<div class="span3">
+				    		<ul class="nav pull-right" id="navList" style="margin-right:30px; top:3px;">
+				    			<li>
+				    				<a href="#signInModal" data-toggle="modal">Sign in</a>
+				    			</li>
+    						</ul>
+				    	</div>
+				    </div>
+			    </div><!-- container in navbar inner-->
+			</div><!--navbar inner-->
+		</div> <!--main navbar-->
+		<!--MODAL SIGN UP START***************-->
+		<div id="signInModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="margin-top:4%;">
+			<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="myModalLabel" class="text-center">Login</h3>
+			</div>	
+			<div class="modal-body">
+            
+				<form class="form-horizontal" action="login.php" method="post">
+					<!--Control groups-->
+					<div class="control-group">
+						<label class="control-label" for="signinUsername">Username</label>
+						<div class="controls">
+						  	<div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span><input type="text" id="signinUsername" name="signinUsername" placeholder="Username" required=""></div><br><br>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="signinPassword">Password</label>
+						<div class="controls">
+						  <div class="input-prepend"><span class="add-on"><i class="icon-lock"></i></span><input type="password" id="signinPassword" name="signinPassword" placeholder="Password" required=""></div><br><br>
+						</div>
+					</div>
+					<div class="control-group">
+						<button type="submit" class="btn btn-success text-center" style="position:absolute; left:40%;">Sign in</button>
+					</div>
+				</form>
+			</div>
+			<!-- end of modal body-->
+			
 </div>
+<div id="push"></div>
