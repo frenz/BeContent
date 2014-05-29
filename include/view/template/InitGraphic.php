@@ -38,16 +38,16 @@ class InitGraphic{
       $groupsEntity = $GLOBALS['sys_group'];
       $userEntity = $GLOBALS['sys_user'];
 
-      /*skinlet frame-public-head: skins/theme/header.html*/
+      /*skinlet frame-public-head: skins/theme/head.html*/
       $head = new Skinlet("frame-public-head");
 
 
-      /*skinlet header: skins/theme/header.html*/
-      $header = new Skinlet("header");
+      /*skinlet loginform: skins/theme/login.html*/
+      $login = new Skinlet("login");
       $loggedUser = new Content($userEntity);
       $loggedUser->setFilter('username', $actualUser);
       $loggedUser->forceSingle();
-      $loggedUser->apply($header);
+      $loggedUser->apply($login);
       
 
 
@@ -73,7 +73,7 @@ class InitGraphic{
 
        /*creazione della struttura*/
        $skin->setContent("head", $head->get());
-       $skin->setContent("header", $header->get());
+       $skin->setContent("login", $login->get());
        $skin->setContent("footer", $footer->get());
    }
 

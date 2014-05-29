@@ -12,9 +12,8 @@ require_once "include/view/template/InitGraphic.php";
 $main = new Skin('theme');
 
 InitGraphic::getInstance()->createGraphic($main);
-$loginBody = new Skinlet('login');
-$main->setContent('body', $loginBody->get());
-
+header("Location: index.php");
+die();
 $main->close();  
 
 ?>
