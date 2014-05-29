@@ -23,13 +23,13 @@
 						<ul class="portfolio-category" id="portfolio_filter">
 							<li>
 								<a id="all_click" href="#" data-filter="*">
-					        		<span class="icon-categories"><i class="fa fa-align-justify"></i></span>All
+					        		<span class="icon-categories"  style="background-image:none"><i class="fa fa-align-justify"></i></span>All
 								</a>
 							</li>
 							{foreach from=$instances item=instance}
 							<li>
 								<a href="#" data-filter=".{$instance->name}">
-									<span class="icon-categories"><i class="{$instance->icon}"></i></span>{$instance->name}                     
+									<span class="icon-categories"  style="background-image:none"><i class="{$instance->icon}"></i></span>{$instance->name}                     
 								</a>
 							</li>	
 							{/foreach}
@@ -41,7 +41,7 @@
 			{foreach from=$instances item=instance}
 					{foreach from=$instance->taxonomy_sys_image item=image}
 						<div class="item isotope-item {$instance->name}">
-							<a href="data:image/jpg;base64,{$image->id_sys_image->data}" rel="lightbox" data-id="{$image->id_sys_image->id}">
+							<a href="data:image/jpg;base64,{$image->id_sys_image->data}" class="colorbox" data-id="{$image->id_sys_image->id}">
 								<img width="480" height="480" src="data:image/jpg;base64,{$image->id_sys_image->data}" class="et-portfolio-thumbnail img-responsive wp-post-image" alt="Worms" />
 								<div class="hover"><span><i class="fa fa-search"></i></span></div>
 							</a>

@@ -5,15 +5,23 @@
     <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.49/jquery.form.min.js'></script>
 
     <script type='text/javascript'>
-        {literal}
-            function toggle_visibility(id) {
-                var e = document.getElementById(id);
-                if (e.style.display == 'block' || e.style.display=='') e.style.display = 'none';
-                else e.style.display = 'block';
-            }
-        {/literal}
+    {literal}
+        function toggle_visibility(id) {
+            var e = document.getElementById(id);
+            if (e.style.display == 'block' || e.style.display=='') e.style.display = 'none';
+            else e.style.display = 'block';
+        }
+    {/literal}
     </script>
-	
+
+	<script>
+    {literal}
+        $(document).ready(function(){
+            //Assign the Colorbox event to elements
+            $('.colorbox').colorbox({'photo':true, rel:'colorbox', transition:'none', retinaImage:true, retinaUrl:true, slideshow:true,  scalePhotos:2500, scalePhotos:true, maxHeight:"90%" });
+        });
+    {/literal}
+    </script>
 
 	
     <script type='text/javascript'>
@@ -34,6 +42,7 @@
     <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.11/jquery.scrollTo.min.js'></script>
     <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/1.5.25/jquery.isotope.min.js'></script>
     <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/0.9.9/jquery.magnific-popup.min.js'></script>
+    <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.4.33/jquery.colorbox.js'></script>
     <script type='text/javascript' src='skins/theme/js/scripts.js'></script>
     <script type='text/javascript' src='skins/theme/js/aqpb-view.js'></script>
     <script type='text/javascript' src='skins/theme/js/waypoints-sticky.js'></script>
