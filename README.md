@@ -21,6 +21,11 @@ Which are the result of the work which has been carried out by the he MDD/Softwa
 
 You need **PHP >= 5.3.0**.
 
+
+date.timezone = Europe/Rome
+extension=msql.so
+extension=json.so
+
 ### Setup your web server
 
 #### Apache
