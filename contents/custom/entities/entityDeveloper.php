@@ -11,7 +11,7 @@ class EntityDeveloper extends Entity
         $this->addField('email', VARCHAR, 255);
         $this->addField('gitaccount', VARCHAR, 255);
         $this->addField('birthday', LONGDATE);
-        $this->setPresentation("nome");
+		$this->setPresentation("surname");
     }
 }
 

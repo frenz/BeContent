@@ -5,7 +5,6 @@ require_once "include/beContent.inc.php";
 require_once "include/view/template/InitGraphic.php";
 
 
-$newsEntity = $GLOBALS['sys_news'];
 
 $main = new Skin("theme");
 InitGraphic::getInstance()->createGraphic($main);

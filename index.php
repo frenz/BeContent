@@ -4,17 +4,6 @@ session_start();
 require_once "include/beContent.inc.php";
 require_once "include/view/template/InitGraphic.php";
 
-$sliderEntity = $GLOBALS['sys_slider'];
-$imageEntity =$GLOBALS['sys_image'];
-$imageSliderRelation = $GLOBALS['sys_image_sys_slider'];
-$newsImmageRelation = $GLOBALS['sys_news_sys_slider'];
-$menuEntity = $GLOBALS['sys_menu'];
-$newsEntity = $GLOBALS['sys_news'];
-$developerImageRelation = $GLOBALS['developer_sys_image'];
-$developerEntity = $GLOBALS['developer'];  
-$pageEntity = $GLOBALS['sys_page'];
-$taxonomyEntity = $GLOBALS['taxonomy'];
-$taxonomyImageRelation = $GLOBALS['taxonomy_sys_image'];
 
 $main = new Skin("theme");
 InitGraphic::getInstance()->createGraphic($main);
