@@ -5,8 +5,8 @@
 {else}
 
 <li class="dropdown menu-item menu-item-type-custom menu-item-object-custom" id="menuLogin">
-    <a class="dropdown-toggle classe" href="#" data-toggle="dropdown" id="navLogin">Login</a>
-    <div class="dropdown-menu" style="padding:17px;">
+    <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown" id="navLogin">Login <b class="caret"></b></a>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="drop" style="padding:17px;">
         <form action="login.php" method="post"> 
             {literal}
             <label>Login</label> 
@@ -25,7 +25,8 @@
         </form>
         <a data-toggle="modal" role="button" href="#forgotPasswordModal">Forgot username or password?</a>
         <a data-toggle="modal" role="button" href="#contactModal"><small>Need help? Contact us</small></a>
-    </div>
+    </ul>
 </li>
 {/if}
+
 

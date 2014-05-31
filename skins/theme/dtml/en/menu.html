@@ -1,12 +1,7 @@
 {if $instances != null || $instance != null}
-<!-- Menu
-======================================================================== --> 
-<nav id="main-menu-top">
-	<ul id="menu-res" class="main-menu">
-	{foreach from=$instances item=instance}
-		<li id="menu-item-{$instance->id}" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-{$instance->id}"><a href="{$instance->link}">{$instance->entry}</a></li>
-	{/foreach}
-	</ul>                    
-</nav>
-<!-- Menu / End -->
+
+{foreach from=$instances item=instance}
+<li id="menu-item-{$instance->id}" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-{$instance->id}"><a href="{$instance->link}">{$instance->entry}</a></li>
+{/foreach}
+	
 {/if}
