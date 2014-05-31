@@ -1,7 +1,6 @@
 {if $instance != null }
-<li class="dropdown menu-item menu-item-type-custom menu-item-object-custom" id="menuLogin">
-<a class="logout" href="logout.php" title="Logout">Logout {$instance->username}</a>
-</li>
+<li><a href="logout.php">Logout {$instance->username}</a></li>
+
 {else}
 
 <li class="dropdown menu-item menu-item-type-custom menu-item-object-custom" id="menuLogin">
